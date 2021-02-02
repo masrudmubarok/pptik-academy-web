@@ -1,7 +1,5 @@
-require 'rugged'
-require 'linguist'
+# Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
+*.rb linguist-language=PHP
 
-repo = Rugged::Repository.new('.')
-project = Linguist::Repository.new(repo, repo.head.target_id)
-project.language       #=> "PHP"
-project.languages      #=> { "PHP" => 119387 }
+# Replace any whitespace in the language name with hyphens:
+*.glyphs linguist-language=OpenStep-Property-List
