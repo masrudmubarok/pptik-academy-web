@@ -18,8 +18,7 @@
                 <div class="mx-auto col-10 bg-light col-md-4 p-3">
                     <div class="row" style="margin-bottom: 15px;">
                         <div class="col-md-12">
-                            <img class="d-block img-fluid mx-auto" src="<?= base_url('assets/images/pptik.png') ?>" width="250">
-                            <h4 style="font-family: Elephant; margin-top: 5px"><b>ACADEMY</b></h4>
+                            <img class="d-block img-fluid mx-auto" src="<?= base_url('assets/images/pptik_academy.jpg') ?>" width="250"><br>
                         </div>
                     </div>
                     <?php if ($this->session->flashdata('error_login')){ ?>
