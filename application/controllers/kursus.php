@@ -18,6 +18,7 @@ class Kursus extends CI_Controller {
 	public function add_krs(){
 		$param['main_content'] = 'kursus/add';
 		$param['page_title'] = 'Tambah Kursus';
+		$param['ttrs_list'] = $this->Kursus_model->getAllTtrs();
 		$this->load->view('template', $param);
 	}
 
