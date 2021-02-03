@@ -39,10 +39,10 @@
 <body>
 	<div class="d-flex" id="wrapper">
 		<nav class="bg-dark border-right" id="sidebar-wrapper" style="margin-right: -1px">
-			<div class="sidebar-heading" style="background:#8AB3F1;" >
-				<i class="fas fa-money-bill-wave"></i> 
-				<h4><b><center>PPTIK Academy</center></b></h4> </div>
+			<div class="sidebar-heading" style="background:#8AB3F1;" > 
+				<center><img style="margin-bottom: -10px;margin-top: -12px" src="<?= base_url('assets/images/pptik_academy2.jpg') ?>" width="190px" height="58px"></center></div>
 			<div class="list-group list-group-flush">
+				<a class="list-group-item bg-transparent"></a>
 				<a href="<?= base_url(); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dashboard"></span> Dashboard</a>
 				<a href="<?= base_url('Kategori'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-list"></span> Courses</a>
 				<a href="<?= base_url('Transaksi'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dollar"></span> &nbsp;Students</a>
