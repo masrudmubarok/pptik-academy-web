@@ -122,7 +122,7 @@ class Kursus extends CI_Controller {
 		}
 	}
 
-	public function delete($id_kursus{
+	public function delete($id_kursus){
 		$this->Kursus_model->delete($id_kursus);
 		$this->session->set_flashdata('success_message', 'Data kursus berhasil dihapus');
 		redirect('Kursus');

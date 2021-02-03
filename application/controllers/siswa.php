@@ -1,25 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaksi extends CI_Controller {
+class Siswa extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('Transaksi_model');
+		$this->load->model('Siswa_model');
 	}
 
 	public function index(){
-		$param['main_content'] = 'transaksi/list';
+		$param['main_content'] = 'siswa/list';
 		$param['page_title'] = 'Students';
-		$param['trs_list'] = $this->Transaksi_model->getAlltrs();
+		$param['swa_list'] = $this->Siswa_model->getAllSwa();
 		$this->load->view('template', $param);
 	}
 
-	public function add_trs(){
-		$param['main_content'] = 'transaksi/add';
-		$param['page_title'] = 'Tambah Transaksi';
-		$param['ktrs_list'] = $this->Transaksi_model->getAllktrs();
-		$param['rkns_list'] = $this->Transaksi_model->getAllrkns();
+	public function add_swa(){
+		$param['main_content'] = 'siswa/add';
+		$param['page_title'] = 'Tambah Siswa';
+		$param['akrs_list'] = $this->Siswa_model->getAllAkrs();
+		$param['krss_list'] = $this->Siswa_model->getAllKrss();
 		$this->load->view('template', $param);
 	}
 
