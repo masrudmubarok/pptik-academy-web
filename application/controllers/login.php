@@ -1,30 +1,34 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends CI_Controller
+{
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 	}
 
-	public function index(){
+	public function index()
+	{
 		$user = $this->input->post('username');
 		$pass = $this->input->post('password');
 
-		if($user === "admin" && $pass === "admin"){
+		if ($user === "admin" && $pass === "admin") {
 			$session = array(
-        'who' => "admin",
-        'isLogin' => true
-      );
+				'who' => "admin",
+				'isLogin' => true
+			);
 			$this->session->set_userdata($session);
 			redirect('Welcome');
-		}else{
+		} else {
 			$this->session->set_flashdata('error_login', 'Username/Password is incorrect!');
 			redirect('Welcome');
 		}
 	}
 
-	public function logout(){
+	public function logout()
+	{
 		$this->session->sess_destroy();
 		redirect('Welcome');
 	}

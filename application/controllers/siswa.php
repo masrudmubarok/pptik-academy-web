@@ -1,21 +1,25 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Siswa extends CI_Controller {
+class Siswa extends CI_Controller
+{
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		$this->load->model('Siswa_model');
 	}
 
-	public function index(){
+	public function index()
+	{
 		$param['main_content'] = 'siswa/list';
 		$param['page_title'] = 'Students';
 		$param['swa_list'] = $this->Siswa_model->getAllSwa();
 		$this->load->view('template', $param);
 	}
 
-	public function add_swa(){
+	public function add_swa()
+	{
 		$param['main_content'] = 'siswa/add';
 		$param['page_title'] = 'Tambah Siswa';
 		$param['akrs_list'] = $this->Siswa_model->getAllAkrs();
@@ -23,7 +27,8 @@ class Siswa extends CI_Controller {
 		$this->load->view('template', $param);
 	}
 
-	public function create(){
+	public function create()
+	{
 		$kode_kategori = $this->input->post('kode_kategori');
 		$id_rekening = $this->input->post('id_rekening');
 		$tanggal_transaksi = $this->input->post('tanggal_transaksi');
@@ -43,18 +48,18 @@ class Siswa extends CI_Controller {
 				'pengeluaran' => $pengeluaran,
 			];
 			$cek = $this->Transaksi_model->insert($data);
-			if($cek){
+			if ($cek) {
 				$this->session->set_flashdata('success_message', 'Data transaksi berhasil ditambahkan');
 				redirect('Transaksi');
-			}else{
+			} else {
 				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
 				redirect('Transaksi/add_trs');
 			}
-
 		}
 	}
 
-	public function edit_trs($id_transaksi){
+	public function edit_trs($id_transaksi)
+	{
 		$data['main_content'] = 'transaksi/edit';
 		$data['page_title'] = 'Edit Data Transaksi';
 		$data['trs'] = $this->Transaksi_model->gettrs($id_transaksi);
@@ -62,7 +67,8 @@ class Siswa extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
-	public function update(){
+	public function update()
+	{
 		$id_transaksi = $this->input->post('id_transaksi');
 		$id_rekening = $this->input->post('id_rekening');
 		$tanggal_transaksi = $this->input->post('tanggal_transaksi');
@@ -71,27 +77,28 @@ class Siswa extends CI_Controller {
 		$pengeluaran = $this->input->post('pengeluaran');
 		if (empty($tanggal_transaksi) || empty($keterangan)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Transaksi/edit_trs/'.$id_transaksi);
+			redirect('Transaksi/edit_trs/' . $id_transaksi);
 		} else {
 			$data = [
-				'id_transaksi' => $id_transaksi, 
-				'id_rekening' => $id_rekening, 
+				'id_transaksi' => $id_transaksi,
+				'id_rekening' => $id_rekening,
 				'tanggal_transaksi' => $tanggal_transaksi,
 				'pemasukan' => $pemasukan,
 				'pengeluaran' => $pengeluaran,
 				'keterangan' => $keterangan,
-				];
-				$this->Transaksi_model->update($id_transaksi, $data);
-				if($reset == "on"){
-					$this->Transaksi_model->reset($id_transaksi);
-				}
+			];
+			$this->Transaksi_model->update($id_transaksi, $data);
+			if ($reset == "on") {
+				$this->Transaksi_model->reset($id_transaksi);
+			}
 
-				$this->session->set_flashdata('success_message', 'Data transaksi berhasil diubah');
-				redirect('Transaksi');
+			$this->session->set_flashdata('success_message', 'Data transaksi berhasil diubah');
+			redirect('Transaksi');
 		}
 	}
 
-	public function delete($id_transaksi){
+	public function delete($id_transaksi)
+	{
 		$this->Transaksi_model->delete($id_transaksi);
 		$this->session->set_flashdata('success_message', 'Data transaksi berhasil dihapus');
 		redirect('Transaksi');

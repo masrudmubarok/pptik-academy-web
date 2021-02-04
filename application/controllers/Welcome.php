@@ -1,9 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		$this->load->model('Dashboard_model');
 	}
@@ -25,7 +27,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		if ($this->session->userdata('isLogin')){
+		if ($this->session->userdata('isLogin')) {
 			$param['main_content'] = 'dashboard';
 			$param['page_title'] = 'Dashboard';
 			// Data box
@@ -46,10 +48,9 @@ class Welcome extends CI_Controller {
 			$param['out_desember'] = $this->Dashboard_model->out_desember();
 			$param['in_januari'] = $this->Dashboard_model->in_januari();
 			$param['out_januari'] = $this->Dashboard_model->out_januari();
-			$this->load->view('template',$param);
+			$this->load->view('template', $param);
 		} else {
 			$this->load->view('login');
 		}
 	}
-
 }
