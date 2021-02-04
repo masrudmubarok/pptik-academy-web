@@ -1,7 +1,7 @@
 <div class="py-1">
   <div class="container">
     <div class="row">
-      <!-- <div class="col-md-12"><h3 class="display-3">Mahasiswa</h3></div> -->
+      <!-- <div class="col-md-12"><h3 class="display-3">Siswa</h3></div> -->
     </div>
   </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="py-0">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Transaksi/add_trs'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Transaksi</a></div>
+      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_swa'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Siswa</a></div>
     </div>
   </div>
 </div>

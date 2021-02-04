@@ -45,6 +45,7 @@
 				<a class="list-group-item bg-transparent"></a>
 				<a href="<?= base_url(); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dashboard"></span> Dashboard</a>
 				<a href="<?= base_url('Kursus'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-list"></span> Courses</a>
+				<a href="<?= base_url('Tutor'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dollar"></span> &nbsp;Tutor</a>
 				<a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dollar"></span> &nbsp;Students</a>
 			</div>
 		</nav>

@@ -38,11 +38,11 @@
           <table class="table table-striped table-borderless" id="newstable">
             <thead>
               <tr>
-                <th class="text-center" style="width: 30px">No</th>
-                <th class="text-center">Nama Kursus</th>
-                <th class="text-center" style="width: 280px">Nama Tutor</th>
-                <th class="text-center">Harga</th>
-                <th class="text-center" style="width: 150px">Aksi</th>
+                <th class="text-center" style="width: 30px">NO</th>
+                <th class="text-center">NAMA KURSUS</th>
+                <th class="text-center" style="width: 280px">NAMA TUTOR</th>
+                <th class="text-center">HARGA</th>
+                <th class="text-center" style="width: 150px">AKSI</th>
               </tr>
             </thead>
             <tbody>
