@@ -4,63 +4,48 @@
 <head>
 
     <div class="row" style="margin-top: 20px; margin-left: 0px;">
-        <!-- Pemasukan (Bulan Ini) Card Example -->
-        <div class="col-md-3 col-6">
-            <!-- small boxa -->
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Rp <?php echo number_format($sum_pemasukan, 0, ',', '.'); ?></b></h4>
-                    <p>Pemasukan</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-download ml-2"></i>
-                </div>
-                <a href="<?= base_url('Laporan'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-
-        <!-- Pengeluaran (Bulan Ini) Card Example -->
-        <div class="col-md-3 col-6">
+        <!-- Courses Card -->
+        <div class="col-md-4 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Rp <?php echo number_format($sum_pengeluaran, 0, ',', '.'); ?></b></h4>
-                    <p>Pengeluaran</p>
+                    <h4 class="mt-4 mr-2"><b>Courses</b></h4>
+                    <h6><?php echo $sum_kursus ?> Class</h6>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-upload ml-2"></i>
+                    <i class="fa fa-book ml-2"></i>
                 </div>
-                <a href="<?= base_url('Laporan'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('Kursus'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
-        <!-- Saldo Card Example -->
-        <div class="col-md-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Rp <?php echo number_format($get_saldo, 0, ',', '.'); ?></b></h4>
-                    <p>Saldo</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-credit-card ml-2"></i>
-                </div>
-                <a href="<?= base_url('Rekening'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-
-        <!-- Piutang Card Example -->
-        <div class="col-md-3 col-6">
+        <!-- Tutors Card -->
+        <div class="col-md-4 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Rp <?php echo number_format($sum_piutang, 0, ',', '.'); ?></b></h4>
-                    <p>Piutang</p>
+                    <h4 class="mt-4 mr-2"><b>Tutors</b></h4>
+                    <h6><?php echo $sum_tutor ?> People</h6>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-stack-overflow ml-2"></i>
+                    <i class="fa fa-user ml-2"></i>
                 </div>
-                <a href="<?= base_url('Piutang'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('Tutor'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Students Card -->
+        <div class="col-md-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h4 class="mt-4 mr-2"><b>Students</b></h4>
+                    <h6><?php echo $sum_siswa ?> People</h6>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-users ml-2"></i>
+                </div>
+                <a href="<?= base_url('Siswa'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>

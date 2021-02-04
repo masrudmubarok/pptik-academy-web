@@ -7,24 +7,24 @@ class Dashboard_model extends CI_Model
     $this->load->database();
   }
 
-  public function sum_pemasukan()
+  public function sum_kursus()
   {
-    $sql = "SELECT sum(pemasukan) as pemasukan FROM transaksi";
+    $sql = "SELECT count(id_kursus) as jumlah_kursus FROM kursus";
     $result = $this->db->query($sql);
-    return $result->row()->pemasukan;
+    return $result->row()->jumlah_kursus;
   }
 
-  public function sum_pengeluaran()
+  public function sum_tutor()
   {
-    $sql = "SELECT sum(pengeluaran) as pengeluaran FROM transaksi";
+    $sql = "SELECT count(id_tutor) as jumlah_tutor FROM tutor";
     $result = $this->db->query($sql);
-    return $result->row()->pengeluaran;
+    return $result->row()->jumlah_tutor;
   }
 
-  public function get_saldo()
+  public function sum_siswa()
   {
-    $sql = "SELECT sum(pemasukan)-sum(pengeluaran) as saldo FROM transaksi";
+    $sql = "SELECT count(id_siswa) as jumlah_siswa FROM siswa";
     $result = $this->db->query($sql);
-    return $result->row()->saldo;
+    return $result->row()->jumlah_siswa;
   }
 }

@@ -31,23 +31,22 @@ class Welcome extends CI_Controller
 			$param['main_content'] = 'dashboard';
 			$param['page_title'] = 'Dashboard';
 			// Data box
-			$param['sum_pemasukan'] = $this->Dashboard_model->sum_pemasukan();
-			$param['sum_pengeluaran'] = $this->Dashboard_model->sum_pengeluaran();
-			$param['get_saldo'] = $this->Dashboard_model->get_saldo();
-			$param['sum_piutang'] = $this->Dashboard_model->sum_piutang();
+			$param['sum_kursus'] = $this->Dashboard_model->sum_kursus();
+			$param['sum_tutor'] = $this->Dashboard_model->sum_tutor();
+			$param['sum_siswa'] = $this->Dashboard_model->sum_siswa();
 			// Data Charts
-			$param['in_agustus'] = $this->Dashboard_model->in_agustus();
-			$param['out_agustus'] = $this->Dashboard_model->out_agustus();
-			$param['in_september'] = $this->Dashboard_model->in_september();
-			$param['out_september'] = $this->Dashboard_model->out_september();
-			$param['in_oktober'] = $this->Dashboard_model->in_oktober();
-			$param['out_oktober'] = $this->Dashboard_model->out_oktober();
-			$param['in_november'] = $this->Dashboard_model->in_november();
-			$param['out_november'] = $this->Dashboard_model->out_november();
-			$param['in_desember'] = $this->Dashboard_model->in_desember();
-			$param['out_desember'] = $this->Dashboard_model->out_desember();
-			$param['in_januari'] = $this->Dashboard_model->in_januari();
-			$param['out_januari'] = $this->Dashboard_model->out_januari();
+			// $param['in_agustus'] = $this->Dashboard_model->in_agustus();
+			// $param['out_agustus'] = $this->Dashboard_model->out_agustus();
+			// $param['in_september'] = $this->Dashboard_model->in_september();
+			// $param['out_september'] = $this->Dashboard_model->out_september();
+			// $param['in_oktober'] = $this->Dashboard_model->in_oktober();
+			// $param['out_oktober'] = $this->Dashboard_model->out_oktober();
+			// $param['in_november'] = $this->Dashboard_model->in_november();
+			// $param['out_november'] = $this->Dashboard_model->out_november();
+			// $param['in_desember'] = $this->Dashboard_model->in_desember();
+			// $param['out_desember'] = $this->Dashboard_model->out_desember();
+			// $param['in_januari'] = $this->Dashboard_model->in_januari();
+			// $param['out_januari'] = $this->Dashboard_model->out_januari();
 			$this->load->view('template', $param);
 		} else {
 			$this->load->view('login');
