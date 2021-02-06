@@ -20,7 +20,7 @@ class Tutor extends CI_Controller
 
     public function add_ttr()
     {
-        $param['main_content'] = 'ttr/add';
+        $param['main_content'] = 'tutor/add';
         $param['page_title'] = 'Tambah Tutor';
         $this->load->view('template', $param);
     }
