@@ -52,7 +52,7 @@
                   <td class="text-center"><?php echo $krs->id_kursus; ?></td>
                   <td class="text-left"><?php echo $krs->nama_kursus ?></td>
                   <td class="text-left"><?php echo $krs->nama_tutor ?></td>
-                  <td class="text-center"><?php echo $krs->harga ?></td>
+                  <td class="text-center">Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></td>
                   <td class="text-center">
                     <a href="<?= base_url('Kursus/edit_krs/' . $krs->id_kursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                     <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $krs->id_kursus; ?>" data-title="<?php echo $krs->id_kursus; ?>"><i class="fa fa-trash text-danger"></i></a>
