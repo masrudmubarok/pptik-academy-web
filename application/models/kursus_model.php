@@ -11,9 +11,9 @@ class Kursus_model extends CI_Model
   {
     // return $this->db->get('kursus')->result();
     $this->db->select('*');
-    $this->db->from('kursus');
-    $this->db->join('tutor', 'tutor.id_tutor = kursus.id_tutor');
-    // $this->db->join('detail_kursus', 'detail_kursus.id_kursus = kursus.id_kursus');
+    $this->db->from('detail_kursus');
+    $this->db->join('kursus', 'detail_kursus.id_kursus = kursus.id_kursus');
+    $this->db->join('tutor', 'kursus.id_tutor = tutor.id_tutor');
     $query = $this->db->get();
     return $query->result();
   }
@@ -34,23 +34,29 @@ class Kursus_model extends CI_Model
     return $query->result();
   }
 
+  public function getkkrs()
+  {
+    $this->db->select('*');
+    $this->db->from('kursus');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function getKrs($id_kursus)
   {
     return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
   }
 
-  function insert($table1, $data1, $table2, $data2)
+  function insert1($data1)
   {
-    $this->db->insert($table1, $data1);
-    $id_table1 = $this->db->insert_id();
+    $this->db->insert('kursus', $data1);
+    return $this->db->affected_rows();
+  }
 
-    array_unshift($data2, array('id_kursus' => $id_table1));
-
-    $this->db->insert($table2, $data2);
-    $id_table2    = $this->db->insert_id();
-
-    $return_data  = array($table1 => $id_table1, $table2 => $id_table2);
-    return $return_data;
+  function insert2($data2)
+  {
+    $this->db->insert('detail_kursus', $data2);
+    return $this->db->affected_rows();
   }
 
   public function update($id_kursus, $data)
