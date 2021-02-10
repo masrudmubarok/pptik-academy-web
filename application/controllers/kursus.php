@@ -23,6 +23,7 @@ class Kursus extends CI_Controller
 		$param['main_content'] = 'kursus/add';
 		$param['page_title'] = 'Tambah Kursus';
 		$param['ttrs_list'] = $this->Kursus_model->getAllTtrs();
+		$param['dkrs_list'] = $this->Kursus_model->getAllDkrs();
 		$this->load->view('template', $param);
 	}
 
@@ -31,7 +32,14 @@ class Kursus extends CI_Controller
 		$id_tutor 	= $this->input->post('id_tutor');
 		$nama_kursus = $this->input->post('nama_kursus');
 		$harga = $this->input->post('harga');
-		$icon = $this->input->post('icon');
+
+		$data1 = array(
+			'id_tutor' => $id_tutor,
+			'nama_kursus' => $nama_kursus,
+			'harga' => $harga,
+		);
+
+		$id_kursus 	= $this->input->post('id_kursus');
 		$video1 = $this->input->post('video1');
 		$des_vid1 = $this->input->post('des_vid1');
 		$video2 = $this->input->post('video2');
@@ -52,47 +60,159 @@ class Kursus extends CI_Controller
 		$des_vid9 = $this->input->post('des_vid9');
 		$video10 = $this->input->post('video10');
 		$des_vid10 = $this->input->post('des_vid10');
+		$icon = $_FILES['icon'];
 
-		if (empty($nama_kursus) || empty($harga) || empty($icon)) {
-			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Kursus/add_krs');
+		if ($icon = '') {
 		} else {
-			$data = [
-				'id_tutor' => $id_tutor,
-				'nama_kursus' => $nama_kursus,
-				'harga' => $harga,
-				'icon' => $icon,
-				'video1' => $video1,
-				'des_vid1' => $des_vid1,
-				'video2' => $video2,
-				'des_vid2' => $des_vid2,
-				'video3' => $video3,
-				'des_vid3' => $des_vid3,
-				'video4' => $video4,
-				'des_vid4' => $des_vid4,
-				'video5' => $video5,
-				'des_vid5' => $des_vid5,
-				'video6' => $video6,
-				'des_vid6' => $des_vid6,
-				'video7' => $video7,
-				'des_vid7' => $des_vid7,
-				'video8' => $video8,
-				'des_vid8' => $des_vid8,
-				'video9' => $video9,
-				'des_vid9' => $des_vid9,
-				'video10' => $video10,
-				'des_vid10' => $des_vid10,
-			];
-			$cek = $this->Kursus_model->insert($data);
-			if ($cek) {
-				$this->session->set_flashdata('success_message', 'Data kursus berhasil ditambahkan');
-				redirect('Kursus');
+			$config['upload_path'] = './assets/uploads';
+			$config['allowed_types'] = 'jpg|png|gif|tiff';
+
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('icon')) {
+				echo "Gagal Upload";
+				die();
 			} else {
-				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
-				redirect('Kursus/add_krs');
+				$icon = $this->upload->data('file_name');
 			}
 		}
+
+		$data2 = array(
+			'id_kursus' => $id_kursus,
+			'video1' => $video1,
+			'des_vid1' => $des_vid1,
+			'video2' => $video2,
+			'des_vid2' => $des_vid2,
+			'video3' => $video3,
+			'des_vid3' => $des_vid3,
+			'video4' => $video4,
+			'des_vid4' => $des_vid4,
+			'video5' => $video5,
+			'des_vid5' => $des_vid5,
+			'video6' => $video6,
+			'des_vid6' => $des_vid6,
+			'video7' => $video7,
+			'des_vid7' => $des_vid7,
+			'video8' => $video8,
+			'des_vid8' => $des_vid8,
+			'video9' => $video9,
+			'des_vid9' => $des_vid9,
+			'video10' => $video10,
+			'des_vid10' => $des_vid10,
+			'icon' => $icon,
+		);
+		// $insert1 = $this->Kursus_model->insert('kursus', $data1);
+		// $insert2 = $this->Kursus_model->insert('detail_kursus', $data2);
+
+		$insert3 = $this->Kursus_model->insert('kursus', $data1, 'detail_kursus', $data2);
+		if ($insert3) {
+			$this->session->set_flashdata('success_message', 'Data kursus berhasil ditambahkan');
+			redirect('Kursus');
+		} else {
+			$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
+			redirect('Kursus/add_krs');
+		}
 	}
+
+	// public function create()
+	// {
+	// 	$id_tutor 	= $this->input->post('id_tutor');
+	// 	$nama_kursus = $this->input->post('nama_kursus');
+	// 	$harga = $this->input->post('harga');
+
+	// 	if (empty($nama_kursus) || empty($harga)) {
+	// 		$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+	// 		redirect('Kursus/add_krs');
+	// 	} else {
+	// 		$data = [
+	// 			'id_tutor' => $id_tutor,
+	// 			'nama_kursus' => $nama_kursus,
+	// 			'harga' => $harga,
+	// 		];
+
+	// 		$cek = $this->Kursus_model->insert($data);
+	// 		if ($cek) {
+	// 			$this->session->set_flashdata('success_message', 'Data kursus berhasil ditambahkan');
+	// 			redirect('Kursus');
+	// 		} else {
+	// 			$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
+	// 			redirect('Kursus/add_krs');
+	// 		}
+	// 	}
+
+	// 	$video1 = $this->input->post('video1');
+	// 	$des_vid1 = $this->input->post('des_vid1');
+	// 	$video2 = $this->input->post('video2');
+	// 	$des_vid2 = $this->input->post('des_vid2');
+	// 	$video3 = $this->input->post('video3');
+	// 	$des_vid3 = $this->input->post('des_vid3');
+	// 	$video4 = $this->input->post('video4');
+	// 	$des_vid4 = $this->input->post('des_vid4');
+	// 	$video5 = $this->input->post('video5');
+	// 	$des_vid5 = $this->input->post('des_vid5');
+	// 	$video6 = $this->input->post('video6');
+	// 	$des_vid6 = $this->input->post('des_vid6');
+	// 	$video7 = $this->input->post('video7');
+	// 	$des_vid7 = $this->input->post('des_vid7');
+	// 	$video8 = $this->input->post('video8');
+	// 	$des_vid8 = $this->input->post('des_vid8');
+	// 	$video9 = $this->input->post('video9');
+	// 	$des_vid9 = $this->input->post('des_vid9');
+	// 	$video10 = $this->input->post('video10');
+	// 	$des_vid10 = $this->input->post('des_vid10');
+	// 	$icon = $_FILES['icon'];
+
+	// 	if (empty($video1)) {
+	// 		$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+	// 		redirect('Kursus/add_krs');
+	// 	} else {
+	// 		if ($icon = '') {
+	// 		} else {
+	// 			$config['upload_path'] = './assets/uploads';
+	// 			$config['allowed_types'] = 'jpg|png|gif|tiff';
+
+	// 			$this->load->library('upload', $config);
+	// 			if (!$this->upload->do_upload('icon')) {
+	// 				echo "Gagal Upload";
+	// 				die();
+	// 			} else {
+	// 				$icon = $this->upload->data('file_name');
+	// 			}
+	// 		}
+
+	// 		$data1 = [
+	// 			'video1' => $video1,
+	// 			'des_vid1' => $des_vid1,
+	// 			'video2' => $video2,
+	// 			'des_vid2' => $des_vid2,
+	// 			'video3' => $video3,
+	// 			'des_vid3' => $des_vid3,
+	// 			'video4' => $video4,
+	// 			'des_vid4' => $des_vid4,
+	// 			'video5' => $video5,
+	// 			'des_vid5' => $des_vid5,
+	// 			'video6' => $video6,
+	// 			'des_vid6' => $des_vid6,
+	// 			'video7' => $video7,
+	// 			'des_vid7' => $des_vid7,
+	// 			'video8' => $video8,
+	// 			'des_vid8' => $des_vid8,
+	// 			'video9' => $video9,
+	// 			'des_vid9' => $des_vid9,
+	// 			'video10' => $video10,
+	// 			'des_vid10' => $des_vid10,
+	// 			'icon' => $icon
+	// 		];
+
+	// 		$cek1 = $this->Kursus_model->insert($data1);
+	// 		if ($cek1) {
+	// 			$this->session->set_flashdata('success_message', 'Data kursus berhasil ditambahkan');
+	// 			redirect('Kursus');
+	// 		} else {
+	// 			$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
+	// 			redirect('Kursus/add_krs');
+	// 		}
+	// 	}
+	// }
 
 	public function edit_krs($id_kursus)
 	{
@@ -108,7 +228,6 @@ class Kursus extends CI_Controller
 		$id_tutor 	= $this->input->post('id_tutor');
 		$nama_kursus = $this->input->post('nama_kursus');
 		$harga = $this->input->post('harga');
-		$icon = $this->input->post('icon');
 		$video1 = $this->input->post('video1');
 		$des_vid1 = $this->input->post('des_vid1');
 		$video2 = $this->input->post('video2');
@@ -138,7 +257,6 @@ class Kursus extends CI_Controller
 				'id_tutor' => $id_tutor,
 				'nama_kursus' => $nama_kursus,
 				'harga' => $harga,
-				'icon' => $icon,
 				'video1' => $video1,
 				'des_vid1' => $des_vid1,
 				'video2' => $video2,

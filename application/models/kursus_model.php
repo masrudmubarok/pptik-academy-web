@@ -13,6 +13,7 @@ class Kursus_model extends CI_Model
     $this->db->select('*');
     $this->db->from('kursus');
     $this->db->join('tutor', 'tutor.id_tutor = kursus.id_tutor');
+    // $this->db->join('detail_kursus', 'detail_kursus.id_kursus = kursus.id_kursus');
     $query = $this->db->get();
     return $query->result();
   }
@@ -25,15 +26,31 @@ class Kursus_model extends CI_Model
     return $query->result();
   }
 
+  public function getAllDkrs()
+  {
+    $this->db->select('*');
+    $this->db->from('detail_kursus');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function getKrs($id_kursus)
   {
     return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
   }
 
-  public function insert($data)
+  function insert($table1, $data1, $table2, $data2)
   {
-    $this->db->insert('kursus', $data);
-    return $this->db->affected_rows();
+    $this->db->insert($table1, $data1);
+    $id_table1 = $this->db->insert_id();
+
+    array_unshift($data2, array('id_kursus' => $id_table1));
+
+    $this->db->insert($table2, $data2);
+    $id_table2    = $this->db->insert_id();
+
+    $return_data  = array($table1 => $id_table1, $table2 => $id_table2);
+    return $return_data;
   }
 
   public function update($id_kursus, $data)
