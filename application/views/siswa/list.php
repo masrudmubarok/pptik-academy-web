@@ -55,12 +55,12 @@
               foreach ($swa_list as $swa) { ?>
                 <tr>
                   <td class="text-center" style="width: 20px"><?php echo $no++ ?></td>
-                  <td class="text-center"><?php echo $swa->nama_siswa; ?></td>
-                  <td class="text-left"><?php echo $swa->username; ?></td>
-                  <td class="text-left"><?php echo $swa->password; ?></td>
+                  <td class="text-left"><?php echo $swa->nama_siswa; ?></td>
+                  <td class="text-center"><?php echo $swa->username; ?></td>
+                  <td class="text-center"><?php echo $swa->password; ?></td>
                   <td class="text-left" style="width: 250px"><?php echo $swa->email; ?></td>
-                  <td class="text-left"><?php echo $swa->kota; ?></td>
-                  <td class="text-left"><?php echo $swa->negara; ?></td>
+                  <td class="text-center"><?php echo $swa->kota; ?></td>
+                  <td class="text-center"><?php echo $swa->negara; ?></td>
                   <td class="text-center" style="width: 80px">
                     <a href="<?= base_url('Siswa/edit_swa/' . $swa->id_siswa) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                     <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $swa->id_siswa; ?>" data-title="<?php echo $swa->id_siswa; ?>"><i class="fa fa-trash text-danger"></i></a>

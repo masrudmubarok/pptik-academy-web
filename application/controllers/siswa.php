@@ -22,85 +22,83 @@ class Siswa extends CI_Controller
 	{
 		$param['main_content'] = 'siswa/add';
 		$param['page_title'] = 'Tambah Siswa';
-		$param['akrs_list'] = $this->Siswa_model->getAllAkrs();
-		$param['krss_list'] = $this->Siswa_model->getAllKrss();
 		$this->load->view('template', $param);
 	}
 
 	public function create()
 	{
-		$kode_kategori = $this->input->post('kode_kategori');
-		$id_rekening = $this->input->post('id_rekening');
-		$tanggal_transaksi = $this->input->post('tanggal_transaksi');
-		$keterangan = $this->input->post('keterangan');
-		$pemasukan = $this->input->post('pemasukan');
-		$pengeluaran = $this->input->post('pengeluaran');
-		if (empty($tanggal_transaksi) || empty($keterangan)) {
+		$nama_siswa = $this->input->post('nama_siswa');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$email = $this->input->post('email');
+		$kota = $this->input->post('kota');
+		$negara = $this->input->post('negara');
+		if (empty($nama_siswa) || empty($username) || empty($password)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Transaksi/add_trs');
+			redirect('Siswa/add_swa');
 		} else {
 			$data = [
-				'kode_kategori' => $kode_kategori,
-				'id_rekening' => $id_rekening,
-				'tanggal_transaksi' => $tanggal_transaksi,
-				'keterangan' => $keterangan,
-				'pemasukan' => $pemasukan,
-				'pengeluaran' => $pengeluaran,
+				'nama_siswa' => $nama_siswa,
+				'username' => $username,
+				'password' => $password,
+				'email' => $email,
+				'kota' => $kota,
+				'negara' => $negara,
 			];
-			$cek = $this->Transaksi_model->insert($data);
+			$cek = $this->Siswa_model->insert($data);
 			if ($cek) {
-				$this->session->set_flashdata('success_message', 'Data transaksi berhasil ditambahkan');
-				redirect('Transaksi');
+				$this->session->set_flashdata('success_message', 'Data siswa berhasil ditambahkan');
+				redirect('Siswa');
 			} else {
 				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
-				redirect('Transaksi/add_trs');
+				redirect('Siswa/add_swa');
 			}
 		}
 	}
 
-	public function edit_trs($id_transaksi)
+	public function edit_swa($id_siswa)
 	{
-		$data['main_content'] = 'transaksi/edit';
-		$data['page_title'] = 'Edit Data Transaksi';
-		$data['trs'] = $this->Transaksi_model->gettrs($id_transaksi);
-		$param['ktrs_list'] = $this->Transaksi_model->getAllktrs();
+		$data['main_content'] = 'siswa/edit';
+		$data['page_title'] = 'Edit Data Siswa';
+		$data['swa'] = $this->Siswa_model->getSwa($id_siswa);
 		$this->load->view('template', $data);
 	}
 
 	public function update()
 	{
-		$id_transaksi = $this->input->post('id_transaksi');
-		$id_rekening = $this->input->post('id_rekening');
-		$tanggal_transaksi = $this->input->post('tanggal_transaksi');
-		$keterangan = $this->input->post('keterangan');
-		$pemasukan = $this->input->post('pemasukan');
-		$pengeluaran = $this->input->post('pengeluaran');
-		if (empty($tanggal_transaksi) || empty($keterangan)) {
+		$id_siswa = $this->input->post('id_siswa');
+		$nama_siswa = $this->input->post('nama_siswa');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$email = $this->input->post('email');
+		$kota = $this->input->post('kota');
+		$negara = $this->input->post('negara');
+		if (empty($nama_siswa) || empty($username) || empty($password)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Transaksi/edit_trs/' . $id_transaksi);
+			redirect('Siswa/edit_swa/' . $id_siswa);
 		} else {
 			$data = [
-				'id_transaksi' => $id_transaksi,
-				'id_rekening' => $id_rekening,
-				'tanggal_transaksi' => $tanggal_transaksi,
-				'pemasukan' => $pemasukan,
-				'pengeluaran' => $pengeluaran,
-				'keterangan' => $keterangan,
+				'nama_siswa' => $nama_siswa,
+				'username' => $username,
+				'password' => $password,
+				'email' => $email,
+				'kota' => $kota,
+				'negara' => $negara,
 			];
-			$this->Transaksi_model->update($id_transaksi, $data);
+			$this->Siswa_model->update($id_siswa, $data);
 			if ($reset == "on") {
-				$this->Transaksi_model->reset($id_transaksi);
+				$this->Siswa_model->reset($id_siswa);
 			}
 
-			$this->session->set_flashdata('success_message', 'Data transaksi berhasil diubah');
-			redirect('Transaksi');
+			$this->session->set_flashdata('success_message', 'Data siswa berhasil diubah');
+			redirect('Siswa');
 		}
 	}
 
-	public function delete($id_transaksi)
+	public function delete($id_siswa)
 	{
-		$this->Transaksi_model->delete($id_transaksi);
-		$this->session->set_flashdata('success_message', 'Data transaksi berhasil dihapus');
-		redirect('Transaksi');
+		$this->Siswa_model->delete($id_siswa);
+		$this->session->set_flashdata('success_message', 'Data siswa berhasil dihapus');
+		redirect('Siswa');
 	}
 }

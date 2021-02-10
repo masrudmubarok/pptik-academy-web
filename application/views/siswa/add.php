@@ -2,20 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <!-- <h3 class="display-3">Tambah Mahasiswa</h3> -->
+        <!-- <h3 class="display-3">Tambah Siswa</h3> -->
       </div>
     </div>
   </div>
 </div>
-<?php if ($this->session->flashdata('error_message')){ ?>
-<div class="py-1">
-  <div class="container">
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading">Oh snap!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></h4>
-      <p><?= $this->session->flashdata('error_message') ?></p>
+<?php if ($this->session->flashdata('error_message')) { ?>
+  <div class="py-1">
+    <div class="container">
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Oh snap!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></h4>
+        <p><?= $this->session->flashdata('error_message') ?></p>
+      </div>
     </div>
   </div>
-</div>
 <?php } ?>
 <div class="py-1">
   <div class="container">
@@ -28,58 +28,44 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <form id="c_form-h" method="post" action="<?= base_url('Transaksi/create'); ?>" enctype="multipart/form-data">
-        <div class="form-group row">
-          <label for="tanggal_transaksi" class="col-4 col-form-label">Tanggal*</label>
-          <div class="col-9">
-            <input type="text" class="form-control" name="tanggal_transaksi"> 
+        <form id="c_form-h" method="post" action="<?= base_url('Siswa/create'); ?>" enctype="multipart/form-data">
+          <div class="form-group row">
+            <label for="nama_siswa" class="col-4 col-form-label">Nama Siswa*</label>
+            <div class="col-9">
+              <input type="text" class="form-control" name="nama_siswa">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="kategori" class="col-4 col-form-label">Kategori*</label>
-          <div class="col-9">
-            <select name="kode_kategori" class="custom-select">
-              <option selected value = ""><b>Pilih :</b></option>
-              <?php
-                foreach ($ktrs_list as $ktr) {
-                  echo "<option value='$ktr->kode_kategori'>$ktr->nama_kategori</option>";
-                }
-              ?>
-            </select>   
+          <div class="form-group row">
+            <label for="username" class="col-4 col-form-label">Username*</label>
+            <div class="col-9">
+              <input type="text" class="form-control" name="username">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="rekening" class="col-4 col-form-label">Rekening*</label>
-          <div class="col-9">
-            <select name="id_rekening" class="custom-select">
-              <option selected value = ""><b>Pilih :</b></option>
-              <?php
-                foreach ($rkns_list as $rkn) {
-                  echo "<option value='$rkn->id_rekening'>$rkn->nama_pemilik</option>";
-                }
-              ?>
-            </select>   
+          <div class="form-group row">
+            <label for="password" class="col-4 col-form-label">Password*</label>
+            <div class="col-9">
+              <input type="password" class="form-control" name="password">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="keterangan" class="col-4 col-form-label">Keterangan*</label>
-          <div class="col-9">
-            <input type="text" class="form-control" name="keterangan"> 
+          <div class="form-group row">
+            <label for="email" class="col-4 col-form-label">Email*</label>
+            <div class="col-9">
+              <input type="text" class="form-control" name="email">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="pemasukan" class="col-4 col-form-label">Pemasukan*</label>
-          <div class="col-9">
-            <input type="text" class="form-control" name="pemasukan"> 
+          <div class="form-group row">
+            <label for="kota" class="col-4 col-form-label">Kota*</label>
+            <div class="col-9">
+              <input type="text" class="form-control" name="kota">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="pengeluaran" class="col-4 col-form-label">Pengeluaran*</label>
-          <div class="col-9">
-            <input type="text" class="form-control" name="pengeluaran"> 
+          <div class="form-group row">
+            <label for="negara" class="col-4 col-form-label">Negara*</label>
+            <div class="col-9">
+              <input type="text" class="form-control" name="negara">
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Tambah Baru</button>
+          <button type="submit" class="btn btn-primary">Tambah Baru</button>
       </div>
       </form>
     </div>
