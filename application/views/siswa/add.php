@@ -28,7 +28,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <form id="c_form-h" method="post" action="<?= base_url('Siswa/create'); ?>" enctype="multipart/form-data">
+        <form id="c_form-h" method="post" action="<?= base_url('Siswa/create1'); ?>" enctype="multipart/form-data">
           <div class="form-group row">
             <label for="nama_siswa" class="col-4 col-form-label">Nama Siswa*</label>
             <div class="col-9">
@@ -65,7 +65,7 @@
               <input type="text" class="form-control" name="negara">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Tambah Baru</button>
+          <button type="submit" class="btn btn-primary">Lanjut</button>
       </div>
       </form>
     </div>

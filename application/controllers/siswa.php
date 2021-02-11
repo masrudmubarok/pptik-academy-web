@@ -25,7 +25,17 @@ class Siswa extends CI_Controller
 		$this->load->view('template', $param);
 	}
 
-	public function create()
+	public function add_dswa()
+	{
+		$param['main_content'] = 'siswa/add_detail';
+		$param['page_title'] = 'Tambah Detail Siswa';
+		$param['swas_list'] = $this->Siswa_model->getswas();
+		$param['akrss_list'] = $this->Siswa_model->getAllAkrs();
+		$param['krss_list'] = $this->Siswa_model->getAllKrss();
+		$this->load->view('template', $param);
+	}
+
+	public function create1()
 	{
 		$nama_siswa = $this->input->post('nama_siswa');
 		$username = $this->input->post('username');
@@ -37,7 +47,7 @@ class Siswa extends CI_Controller
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
 			redirect('Siswa/add_swa');
 		} else {
-			$data = [
+			$data1 = [
 				'nama_siswa' => $nama_siswa,
 				'username' => $username,
 				'password' => $password,
@@ -45,8 +55,51 @@ class Siswa extends CI_Controller
 				'kota' => $kota,
 				'negara' => $negara,
 			];
-			$cek = $this->Siswa_model->insert($data);
-			if ($cek) {
+			$cek1 = $this->Siswa_model->insert1($data1);
+			if ($cek1) {
+				$this->session->set_flashdata('success_message', 'Data siswa berhasil ditambahkan');
+				redirect('Siswa/add_dswa');
+			} else {
+				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
+				redirect('Siswa/add_swa');
+			}
+		}
+	}
+
+	public function create2()
+	{
+		$id_siswa = $this->input->post('id_siswa');
+		$id_kursus = $this->input->post('id_kursus');
+		$status_pembayaran = $this->input->post('status_pembayaran');
+		$status_kursus = $this->input->post('status_kursus');
+		$sertifikat = $_FILES['sertifikat'];
+		if (empty($id_siswa) || empty($id_kursus)) {
+			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+			redirect('Siswa/add_dswa');
+		} else {
+			if ($sertifikat = '') {
+			} else {
+				$config['upload_path'] = './assets/uploads';
+				$config['allowed_types'] = 'jpg|png|gif|tiff|pdf';
+
+				$this->load->library('upload', $config);
+				if (!$this->upload->do_upload('sertifikat')) {
+					echo "Gagal Upload";
+					die();
+				} else {
+					$sertifikat = $this->upload->data('file_name');
+				}
+			}
+
+			$data2 = [
+				'id_siswa' => $id_siswa,
+				'id_kursus' => $id_kursus,
+				'status_pembayaran' => $status_pembayaran,
+				'status_kursus' => $status_kursus,
+				'sertifikat' => $sertifikat,
+			];
+			$cek2 = $this->Siswa_model->insert2($data2);
+			if ($cek2) {
 				$this->session->set_flashdata('success_message', 'Data siswa berhasil ditambahkan');
 				redirect('Siswa');
 			} else {

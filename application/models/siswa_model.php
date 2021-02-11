@@ -11,8 +11,8 @@ class Siswa_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('siswa');
-    // $this->db->join('ambil_kursus', 'ambil_kursus.id_siswa = siswa.id_siswa');
-    // $this->db->join('kursus', 'kursus.id_kursus = ambil_kursus.id_kursus');
+    $this->db->join('ambil_kursus', 'siswa.id_siswa = ambil_kursus.id_siswa');
+    $this->db->join('kursus', 'ambil_kursus.id_kursus = kursus.id_kursus');
     $query = $this->db->get();
     return $query->result();
   }
@@ -33,14 +33,28 @@ class Siswa_model extends CI_Model
     return $query->result();
   }
 
+  public function getswas()
+  {
+    $this->db->select('*');
+    $this->db->from('siswa');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function getSwa($id_siswa)
   {
     return $this->db->where('id_siswa', $id_siswa)->get('siswa')->row();
   }
 
-  public function insert($data)
+  public function insert1($data1)
   {
-    $this->db->insert('siswa', $data);
+    $this->db->insert('siswa', $data1);
+    return $this->db->affected_rows();
+  }
+
+  public function insert2($data2)
+  {
+    $this->db->insert('ambil_kursus', $data2);
     return $this->db->affected_rows();
   }
 
