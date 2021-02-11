@@ -67,7 +67,10 @@ class Kursus_model extends CI_Model
 
   public function delete($id_kursus)
   {
-    $this->db->where('id_kursus', $id_kursus)->delete('kursus');
-    return $this->db->affected_rows();
+    $sql = "DELETE dk, k FROM detail_kursus dk
+    JOIN kursus k ON dk.id_kursus = k.id_kursus
+    WHERE k.id_kursus = $id_kursus AND dk.id_detailkursus = $id_kursus";
+
+    $this->db->query($sql, array($id_kursus));
   }
 }
