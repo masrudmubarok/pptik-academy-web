@@ -125,7 +125,15 @@ class Siswa extends CI_Controller
 		$this->load->view('template', $data);
 	}
 
-	public function update()
+	public function edit_akrs($id_ambilkursus)
+	{
+		$data['main_content'] = 'siswa/edit_detail';
+		$data['page_title'] = 'Edit Data Detail Siswa';
+		$data['akrs'] = $this->Siswa_model->getAkrs($id_ambilkursus);
+		$this->load->view('template', $data);
+	}
+
+	public function update1()
 	{
 		$id_siswa = $this->input->post('id_siswa');
 		$nama_siswa = $this->input->post('nama_siswa');
@@ -139,6 +147,7 @@ class Siswa extends CI_Controller
 			redirect('Siswa/edit_swa/' . $id_siswa);
 		} else {
 			$data = [
+				'id_siswa' => $id_siswa,
 				'nama_siswa' => $nama_siswa,
 				'username' => $username,
 				'password' => $password,
@@ -146,13 +155,52 @@ class Siswa extends CI_Controller
 				'kota' => $kota,
 				'negara' => $negara,
 			];
-			$this->Siswa_model->update($id_siswa, $data);
+			$this->Siswa_model->update1($id_siswa, $data);
 			// if ($reset == "on") {
 			// 	$this->Siswa_model->reset($id_siswa);
 			// }
 
 			$this->session->set_flashdata('success_message', 'Data siswa berhasil diubah');
 			redirect('Siswa');
+		}
+	}
+
+	public function update2()
+	{
+		$id_ambilkursus = $this->input->post('id_ambilkursus');
+		$id_siswa = $this->input->post('id_siswa');
+		$id_kursus = $this->input->post('id_kursus');
+		$status_pembayaran = $this->input->post('status_pembayaran');
+		$status_kursus = $this->input->post('status_kursus');
+		$sertifikat = $_FILES['sertifikat'];
+		if (empty($id_ambilkursus) || empty($id_siswa) || empty($id_kursus)) {
+			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+			redirect('Siswa/edit_akrs/' . $id_ambilkursus);
+		} else {
+			if ($sertifikat = '') {
+			} else {
+				$config['upload_path'] = './assets/uploads';
+				$config['allowed_types'] = 'jpg|png|gif|tiff|pdf';
+
+				$this->load->library('upload', $config);
+				$sertifikat = $this->upload->data('file_name');
+			}
+
+			$data = [
+				'id_ambilkursus' => $id_ambilkursus,
+				'id_siswa' => $id_siswa,
+				'id_kursus' => $id_kursus,
+				'status_pembayaran' => $status_pembayaran,
+				'status_kursus' => $status_kursus,
+				'sertifikat' => $sertifikat,
+			];
+			$this->Siswa_model->update2($id_ambilkursus, $data);
+			// if ($reset == "on") {
+			// 	$this->Siswa_model->reset($id_ambilkursus);
+			// }
+
+			$this->session->set_flashdata('success_message', 'Data pengambilan kursus siswa berhasil diubah');
+			redirect('Siswa/detail');
 		}
 	}
 

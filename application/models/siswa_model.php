@@ -28,8 +28,12 @@ class Siswa_model extends CI_Model
 
   public function getSwa($id_siswa)
   {
-    $sql = "SELECT siswa.nama_siswa, ambil_kursus.status_kursus, kursus.nama_kursus FROM siswa JOIN ambil_kursus ON siswa.id_siswa = ambil_kursus.id_siswa JOIN kursus ON ambil_kursus.id_kursus = kursus.id_kursus WHERE siswa.id_siswa = $id_siswa";
-    $this->db->query($sql, array($id_siswa));
+    return $this->db->where('id_siswa', $id_siswa)->get('siswa')->row();
+  }
+
+  public function getAkrs($id_ambilkursus)
+  {
+    return $this->db->where('id_ambilkursus', $id_ambilkursus)->get('ambil_kursus')->row();
   }
 
   public function insert1($data1)
@@ -44,9 +48,15 @@ class Siswa_model extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function update($id_siswa, $data)
+  public function update1($id_siswa, $data1)
   {
-    $this->db->where('id_siswa', $id_siswa)->update('siswa', $data);
+    $this->db->where('id_siswa', $id_siswa)->update('siswa', $data1);
+    return $this->db->affected_rows();
+  }
+
+  public function update2($id_ambilkursus, $data2)
+  {
+    $this->db->where('id_ambilkursus', $id_ambilkursus)->update('ambil_kursus', $data2);
     return $this->db->affected_rows();
   }
 
