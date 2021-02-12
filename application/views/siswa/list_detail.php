@@ -26,6 +26,7 @@
 <div class="py-0">
     <div class="container">
         <div class="row">
+
             <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_swa'); ?>"><i class="fa fa-plus"></i>&ensp;Ambil Kursus</a></div>
         </div>
     </div>
@@ -61,13 +62,14 @@
                                     <td class="text-center"><?php echo $swa->sertifikat; ?></td>
                                     <td class="text-center" style="width: 80px">
                                         <a href="<?= base_url('Siswa/edit_swa/' . $swa->id_siswa) ?>"><i class="fa fa-pencil text-secondary"></i></a>
-                                        <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $swa->id_siswa; ?>" data-title="<?php echo $swa->id_siswa; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $swa->id_ambilkursus; ?>" data-title="<?php echo $swa->id_ambilkursus; ?>"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php $i++;
                             } ?>
                         </tbody>
                     </table>
+                    <a href="<?php echo base_url('Siswa'); ?>"><i class="fa fa-undo"></i>&ensp;Kembali</a>
                 </div>
             </div>
         </div>
@@ -80,11 +82,11 @@
                 <h5 class="modal-title">Konfirmasi Penghapusan</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
             </div>
             <div class="modal-body">
-                <p>Anda yakin ingin menghapus data siswa yang dipilih?</p>
+                <p>Anda yakin ingin menghapus data pengambilan kursus siswa yang dipilih?</p>
                 <p id="mhstitle"></p>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo base_url() ?>Siswa/delete/<?php echo $swa->id_siswa ?>" class="btn btn-danger">Delete</a>
+                <a href="<?php echo base_url() ?>Siswa/delete/<?php echo $swa->id_ambilkursus ?>" class="btn btn-danger">Delete</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

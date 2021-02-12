@@ -26,7 +26,11 @@
 <div class="py-0">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_swa'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Siswa</a></div>
+      <div class="col-md-12 mt-2">
+        <a class="btn btn-success" href="<?php echo base_url('Siswa/add_swa'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Siswa</a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary" href="<?php echo base_url('Siswa/detail'); ?>"><i class="fa fa-eye"></i>&ensp;Pengambilan Kursus</a>
+      </div>
     </div>
   </div>
 </div>
@@ -62,7 +66,6 @@
                   <td class="text-center"><?php echo $swa->kota; ?></td>
                   <td class="text-center"><?php echo $swa->negara; ?></td>
                   <td class="text-center" style="width: 80px">
-                    <a href="<?= base_url('Siswa/detail/' . $swa->id_siswa) ?>"><i class="fa fa-eye text-secondary"></i></a>
                     <a href="<?= base_url('Siswa/edit_swa/' . $swa->id_siswa) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                   </td>
                 </tr>
@@ -75,7 +78,7 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="ModalDelete" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="ModalDelete" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -91,8 +94,8 @@
       </div>
     </div>
   </div>
-</div>
-<script>
+</div> -->
+<!-- <script>
   $('#ModalDelete').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget)
     var swa_id = button.data('id')
@@ -101,4 +104,4 @@
     document.getElementById('swatitle').innerHTML = swa_title;
     modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Siswa/delete/" + swa_id)
   })
-</script>
+</script> -->

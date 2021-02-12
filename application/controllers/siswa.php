@@ -14,15 +14,14 @@ class Siswa extends CI_Controller
 	{
 		$param['main_content'] = 'siswa/list';
 		$param['page_title'] = 'Students';
-		$param['swa_list'] = $this->Siswa_model->getAllSwa();
+		$param['swa_list'] = $this->Siswa_model->getswas();
 		$this->load->view('template', $param);
 	}
 
-	public function detail($id_siswa)
+	public function detail()
 	{
 		$param['main_content'] = 'siswa/list_detail';
-		$param['page_title'] = 'Students Detail';
-		$param['swa_list'] = $this->Siswa_model->getSwa($id_siswa);
+		$param['page_title'] = 'Students Courses';
 		$param['swa_list'] = $this->Siswa_model->getAllSwa();
 		$this->load->view('template', $param);
 	}
@@ -67,7 +66,7 @@ class Siswa extends CI_Controller
 			$cek1 = $this->Siswa_model->insert1($data1);
 			if ($cek1) {
 				$this->session->set_flashdata('success_message', 'Data siswa berhasil ditambahkan');
-				redirect('Siswa/add_dswa');
+				redirect('Siswa');
 			} else {
 				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
 				redirect('Siswa/add_swa');
@@ -157,10 +156,10 @@ class Siswa extends CI_Controller
 		}
 	}
 
-	public function delete($id_siswa)
+	public function delete($id_ambilkursus)
 	{
-		$this->Siswa_model->delete($id_siswa);
-		$this->session->set_flashdata('success_message', 'Data siswa berhasil dihapus');
-		redirect('Siswa');
+		$this->Siswa_model->delete($id_ambilkursus);
+		$this->session->set_flashdata('success_message', 'Data pengambilan kursus siswa berhasil dihapus');
+		redirect('Siswa/detail');
 	}
 }

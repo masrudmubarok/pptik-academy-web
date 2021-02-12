@@ -65,7 +65,7 @@
               <input type="text" class="form-control" name="negara">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Lanjut</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
       </div>
       </form>
     </div>

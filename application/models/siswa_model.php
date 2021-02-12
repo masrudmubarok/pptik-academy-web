@@ -17,24 +17,9 @@ class Siswa_model extends CI_Model
     return $query->result();
   }
 
-  public function getAllAkrs()
-  {
-    $this->db->select('*');
-    $this->db->from('ambil_kursus');
-    $query = $this->db->get();
-    return $query->result();
-  }
-
-  public function getAllKrss()
-  {
-    $this->db->select('*');
-    $this->db->from('kursus');
-    $query = $this->db->get();
-    return $query->result();
-  }
-
   public function getswas()
   {
+    $this->db->distinct();
     $this->db->select('*');
     $this->db->from('siswa');
     $query = $this->db->get();
@@ -43,7 +28,8 @@ class Siswa_model extends CI_Model
 
   public function getSwa($id_siswa)
   {
-    return $this->db->where('id_siswa', $id_siswa)->get('siswa')->row();
+    $sql = "SELECT siswa.nama_siswa, ambil_kursus.status_kursus, kursus.nama_kursus FROM siswa JOIN ambil_kursus ON siswa.id_siswa = ambil_kursus.id_siswa JOIN kursus ON ambil_kursus.id_kursus = kursus.id_kursus WHERE siswa.id_siswa = $id_siswa";
+    $this->db->query($sql, array($id_siswa));
   }
 
   public function insert1($data1)
@@ -64,9 +50,9 @@ class Siswa_model extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function delete($id_siswa)
+  public function delete($id_ambilkursus)
   {
-    $this->db->where('id_siswa', $id_siswa)->delete('siswa');
+    $this->db->where('id_ambilkursus', $id_ambilkursus)->delete('ambil_kursus');
     return $this->db->affected_rows();
   }
 }
