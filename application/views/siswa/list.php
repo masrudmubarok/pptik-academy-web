@@ -62,8 +62,8 @@
                   <td class="text-center"><?php echo $swa->kota; ?></td>
                   <td class="text-center"><?php echo $swa->negara; ?></td>
                   <td class="text-center" style="width: 80px">
+                    <a href="<?= base_url('Siswa/detail/' . $swa->id_siswa) ?>"><i class="fa fa-eye text-secondary"></i></a>
                     <a href="<?= base_url('Siswa/edit_swa/' . $swa->id_siswa) ?>"><i class="fa fa-pencil text-secondary"></i></a>
-                    <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $swa->id_siswa; ?>" data-title="<?php echo $swa->id_siswa; ?>"><i class="fa fa-trash text-danger"></i></a>
                   </td>
                 </tr>
               <?php $i++;

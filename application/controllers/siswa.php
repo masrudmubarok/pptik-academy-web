@@ -18,6 +18,15 @@ class Siswa extends CI_Controller
 		$this->load->view('template', $param);
 	}
 
+	public function detail($id_siswa)
+	{
+		$param['main_content'] = 'siswa/list_detail';
+		$param['page_title'] = 'Students Detail';
+		$param['swa_list'] = $this->Siswa_model->getSwa($id_siswa);
+		$param['swa_list'] = $this->Siswa_model->getAllSwa();
+		$this->load->view('template', $param);
+	}
+
 	public function add_swa()
 	{
 		$param['main_content'] = 'siswa/add';
@@ -139,9 +148,9 @@ class Siswa extends CI_Controller
 				'negara' => $negara,
 			];
 			$this->Siswa_model->update($id_siswa, $data);
-			if ($reset == "on") {
-				$this->Siswa_model->reset($id_siswa);
-			}
+			// if ($reset == "on") {
+			// 	$this->Siswa_model->reset($id_siswa);
+			// }
 
 			$this->session->set_flashdata('success_message', 'Data siswa berhasil diubah');
 			redirect('Siswa');
