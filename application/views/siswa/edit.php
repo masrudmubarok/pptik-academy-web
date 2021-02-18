@@ -52,6 +52,12 @@
         </div>
       </div>
       <div class="form-group row">
+        <label for="email" class="col-2 col-form-label">Email*</label>
+        <div class="col-3">
+          <input type="text" class="form-control" name="email" value="<?= $swa->email ?>">
+        </div>
+      </div>
+      <div class="form-group row">
         <label for="kota" class="col-2 col-form-label">Kota*</label>
         <div class="col-5">
           <input type="text" class="form-control" name="kota" value="<?= $swa->kota ?>">
