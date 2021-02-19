@@ -18,6 +18,18 @@ class Kursus_model extends CI_Model
     return $query->result();
   }
 
+  public function getKrsd($id_kursus)
+  {
+    // return $this->db->get('kursus')->result();
+    $this->db->select('*');
+    $this->db->from('detail_kursus');
+    $this->db->join('kursus', 'detail_kursus.id_kursus = kursus.id_kursus');
+    $this->db->join('tutor', 'kursus.id_tutor = tutor.id_tutor');
+    $this->db->where('kursus.id_kursus', $id_kursus);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function getAllTtrs()
   {
     $this->db->select('*');
