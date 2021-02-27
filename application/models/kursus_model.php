@@ -59,6 +59,11 @@ class Kursus_model extends CI_Model
     return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
   }
 
+  public function getKrsdk($id_kursus)
+  {
+    return $this->db->where('id_kursus', $id_kursus)->get('detail_kursus')->row();
+  }
+
   function insert1($data1)
   {
     $this->db->insert('kursus', $data1);
@@ -71,9 +76,19 @@ class Kursus_model extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function update($id_kursus, $data)
+  public function update1($id_kursus, $data1)
   {
-    $this->db->where('id_kursus', $id_kursus)->update('kursus', $data);
+    // $this->db->where('id_kursus', $id_kursus)->update('kursus', $data1);
+    // return $this->db->affected_rows();
+    $this->db->set($data1);
+    $this->db->where('kursus.id_kursus', $id_kursus);
+    $this->db->where('detail_kursus.id_detailkursus', $id_kursus);
+    $this->db->update('kursus, detail_kursus');
+  }
+
+  public function update2($id_detailkursus, $data2)
+  {
+    $this->db->where('id_detailkursus', $id_detailkursus)->update('detail_kursus', $data2);
     return $this->db->affected_rows();
   }
 

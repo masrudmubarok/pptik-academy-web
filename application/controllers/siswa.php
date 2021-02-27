@@ -146,7 +146,7 @@ class Siswa extends CI_Controller
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
 			redirect('Siswa/edit_swa/' . $id_siswa);
 		} else {
-			$data = [
+			$data1 = [
 				'id_siswa' => $id_siswa,
 				'nama_siswa' => $nama_siswa,
 				'username' => $username,
@@ -155,7 +155,7 @@ class Siswa extends CI_Controller
 				'kota' => $kota,
 				'negara' => $negara,
 			];
-			$this->Siswa_model->update1($id_siswa, $data);
+			$this->Siswa_model->update1($id_siswa, $data1);
 			// if ($reset == "on") {
 			// 	$this->Siswa_model->reset($id_siswa);
 			// }
@@ -180,13 +180,18 @@ class Siswa extends CI_Controller
 			if ($sertifikat = '') {
 			} else {
 				$config['upload_path'] = './assets/uploads';
-				$config['allowed_types'] = 'jpg|png|gif|tiff|pdf';
+				$config['allowed_types'] = 'jpg|png|gif|tiff';
 
 				$this->load->library('upload', $config);
-				$sertifikat = $this->upload->data('file_name');
+				if (!$this->upload->do_upload('sertifikat')) {
+					echo "Gagal Upload";
+					die();
+				} else {
+					$sertifikat = $this->upload->data('file_name');
+				}
 			}
 
-			$data = [
+			$data2 = [
 				'id_ambilkursus' => $id_ambilkursus,
 				'id_siswa' => $id_siswa,
 				'id_kursus' => $id_kursus,
@@ -194,7 +199,7 @@ class Siswa extends CI_Controller
 				'status_kursus' => $status_kursus,
 				'sertifikat' => $sertifikat,
 			];
-			$this->Siswa_model->update2($id_ambilkursus, $data);
+			$this->Siswa_model->update2($id_ambilkursus, $data2);
 			// if ($reset == "on") {
 			// 	$this->Siswa_model->reset($id_ambilkursus);
 			// }

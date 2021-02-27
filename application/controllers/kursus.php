@@ -156,15 +156,52 @@ class Kursus extends CI_Controller
 		$data['main_content'] = 'kursus/edit';
 		$data['page_title'] = 'Edit Data Kursus';
 		$data['krs'] = $this->Kursus_model->getKrs($id_kursus);
+		$data['krsd'] = $this->Kursus_model->getKrsdk($id_kursus);
+		$data['ttr_list'] = $this->Kursus_model->getAllTtrs();
 		$this->load->view('template', $data);
 	}
 
-	public function update()
+	public function edit_dkrs($id_detailkursus)
+	{
+		$data['main_content'] = 'kursus/edit_detail';
+		$data['page_title'] = 'Edit Data Detail Kursus';
+		$data['dkrs'] = $this->Kursus_model->getKrs($id_detailkursus);
+		$this->load->view('template', $data);
+	}
+
+	public function update1()
 	{
 		$id_kursus 	= $this->input->post('id_kursus');
 		$id_tutor 	= $this->input->post('id_tutor');
 		$nama_kursus = $this->input->post('nama_kursus');
 		$harga = $this->input->post('harga');
+		$video1 = $this->input->post('video1');
+		$reset = $this->input->post('reset');
+
+		if (empty($nama_kursus) || empty($harga)) {
+			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+			redirect('Kursus/edit_krs/' . $id_kursus);
+		} else {
+			$data1 = [
+				'id_tutor' => $id_tutor,
+				'nama_kursus' => $nama_kursus,
+				'harga' => $harga,
+				'video1' => $video1,
+			];
+			$this->Kursus_model->update1($id_kursus, $data1);
+			if ($reset == "on") {
+				$this->Kursus_model->reset($id_kursus);
+			}
+
+			$this->session->set_flashdata('success_message', 'Data kursus berhasil diubah');
+			redirect('Kursus');
+		}
+	}
+
+	public function update2()
+	{
+		$id_detailkursus 	= $this->input->post('id_detailkursus');
+		$id_kursus 	= $this->input->post('id_kursus');
 		$video1 = $this->input->post('video1');
 		$des_vid1 = $this->input->post('des_vid1');
 		$video2 = $this->input->post('video2');
@@ -185,15 +222,16 @@ class Kursus extends CI_Controller
 		$des_vid9 = $this->input->post('des_vid9');
 		$video10 = $this->input->post('video10');
 		$des_vid10 = $this->input->post('des_vid10');
+		$icon = $_FILES['icon'];
 		$reset = $this->input->post('reset');
-		if (empty($nama_kursus) || empty($harga) || empty($icon)) {
+
+		if (empty($nama_kursus) || empty($harga)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Kursus/edit_krs/' . $id_kursus);
+			redirect('Kursus/edit_dkrs/' . $id_detailkursus);
 		} else {
-			$data = [
-				'id_tutor' => $id_tutor,
-				'nama_kursus' => $nama_kursus,
-				'harga' => $harga,
+			$data2 = [
+				'id_detailkursus' => $id_detailkursus,
+				'id_kursus' => $id_kursus,
 				'video1' => $video1,
 				'des_vid1' => $des_vid1,
 				'video2' => $video2,
@@ -214,10 +252,11 @@ class Kursus extends CI_Controller
 				'des_vid9' => $des_vid9,
 				'video10' => $video10,
 				'des_vid10' => $des_vid10,
+				'icon' => $icon
 			];
-			$this->Kursus_model->update($id_kursus, $data);
+			$this->Kursus_model->update2($id_detailkursus, $data2);
 			if ($reset == "on") {
-				$this->Kursus_model->reset($id_kursus);
+				$this->Kursus_model->reset($id_detailkursus);
 			}
 
 			$this->session->set_flashdata('success_message', 'Data kursus berhasil diubah');

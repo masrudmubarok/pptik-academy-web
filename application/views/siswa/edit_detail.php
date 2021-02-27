@@ -28,15 +28,15 @@
     <div class="container">
         <form id="c_form-h" method="post" action="<?= base_url('Siswa/update2'); ?>" enctype="multipart/form-data">
             <div class="form-group row">
-                <label for="id_ambilkursus" class="col-2 col-form-label">ID Ambil Kursus*</label>
+                <!-- <label for="id_ambilkursus" class="col-2 col-form-label">ID Ambil Kursus*</label> -->
                 <div class="col-3">
-                    <input type="text" class="form-control" name="id_ambilkursus" value="<?= $akrs->id_ambilkursus ?>" readonly>
+                    <input type="hidden" class="form-control" name="id_ambilkursus" value="<?= $akrs->id_ambilkursus ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="id_siswa" class="col-2 col-form-label">ID Siswa*</label>
+                <!-- <label for="id_siswa" class="col-2 col-form-label">ID Siswa*</label> -->
                 <div class="col-3">
-                    <input type="text" class="form-control" name="id_siswa" value="<?= $akrs->id_siswa ?>" readonly>
+                    <input type="hidden" class="form-control" name="id_siswa" value="<?= $akrs->id_siswa ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">

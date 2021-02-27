@@ -42,6 +42,7 @@
                 <th class="text-center">NAMA KURSUS</th>
                 <th class="text-center" style="width: 280px">NAMA TUTOR</th>
                 <th class="text-center">HARGA</th>
+                <th class="text-center">VIDEO 1</th>
                 <th class="text-center" style="width: 150px">AKSI</th>
               </tr>
             </thead>
@@ -53,6 +54,7 @@
                   <td class="text-left"><?php echo $krs->nama_kursus ?></td>
                   <td class="text-left"><?php echo $krs->nama_tutor ?></td>
                   <td class="text-center">Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></td>
+                  <td class="text-left"><?php echo $krs->video1 ?></td>
                   <td class="text-center">
                     <a href="<?= base_url('Kursus/detail/' . $krs->id_kursus) ?>"><i class="fa fa-eye text-secondary"></i></a>
                     <a href="<?= base_url('Kursus/edit_krs/' . $krs->id_kursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
