@@ -42,25 +42,25 @@ class Kursus extends CI_Controller
 		$harga = $this->input->post('harga');
 		$icon = $_FILES['icon'];
 		$video1 = $this->input->post('video1');
-		$des_vid1 = $this->input->post('des_vid1');
+		$judulvid1 = $this->input->post('judulvid1');
 		$video2 = $this->input->post('video2');
-		$des_vid2 = $this->input->post('des_vid2');
+		$judulvid2 = $this->input->post('judulvid2');
 		$video3 = $this->input->post('video3');
-		$des_vid3 = $this->input->post('des_vid3');
+		$judulvid3 = $this->input->post('judulvid3');
 		$video4 = $this->input->post('video4');
-		$des_vid4 = $this->input->post('des_vid4');
+		$judulvid4 = $this->input->post('judulvid4');
 		$video5 = $this->input->post('video5');
-		$des_vid5 = $this->input->post('des_vid5');
+		$judulvid5 = $this->input->post('judulvid5');
 		$video6 = $this->input->post('video6');
-		$des_vid6 = $this->input->post('des_vid6');
+		$judulvid6 = $this->input->post('judulvid6');
 		$video7 = $this->input->post('video7');
-		$des_vid7 = $this->input->post('des_vid7');
+		$judulvid7 = $this->input->post('judulvid7');
 		$video8 = $this->input->post('video8');
-		$des_vid8 = $this->input->post('des_vid8');
+		$judulvid8 = $this->input->post('judulvid8');
 		$video9 = $this->input->post('video9');
-		$des_vid9 = $this->input->post('des_vid9');
+		$judulvid9 = $this->input->post('judulvid9');
 		$video10 = $this->input->post('video10');
-		$des_vid10 = $this->input->post('des_vid10');
+		$judulvid10 = $this->input->post('judulvid10');
 
 		if (empty($nama_kursus) || empty($harga)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
@@ -86,25 +86,25 @@ class Kursus extends CI_Controller
 				'harga' => $harga,
 				'icon' => $icon,
 				'video1' => $video1,
-				'des_vid1' => $des_vid1,
+				'judulvid1' => $judulvid1,
 				'video2' => $video2,
-				'des_vid2' => $des_vid2,
+				'judulvid2' => $judulvid2,
 				'video3' => $video3,
-				'des_vid3' => $des_vid3,
+				'judulvid3' => $judulvid3,
 				'video4' => $video4,
-				'des_vid4' => $des_vid4,
+				'judulvid4' => $judulvid4,
 				'video5' => $video5,
-				'des_vid5' => $des_vid5,
+				'judulvid5' => $judulvid5,
 				'video6' => $video6,
-				'des_vid6' => $des_vid6,
+				'judulvid6' => $judulvid6,
 				'video7' => $video7,
-				'des_vid7' => $des_vid7,
+				'judulvid7' => $judulvid7,
 				'video8' => $video8,
-				'des_vid8' => $des_vid8,
+				'judulvid8' => $judulvid8,
 				'video9' => $video9,
-				'des_vid9' => $des_vid9,
+				'judulvid9' => $judulvid9,
 				'video10' => $video10,
-				'des_vid10' => $des_vid10,
+				'judulvid10' => $judulvid10,
 
 			];
 
@@ -135,6 +135,25 @@ class Kursus extends CI_Controller
 		$nama_kursus = $this->input->post('nama_kursus');
 		$harga = $this->input->post('harga');
 		$video1 = $this->input->post('video1');
+		$judulvid1 = $this->input->post('judulvid1');
+		$video2 = $this->input->post('video2');
+		$judulvid2 = $this->input->post('judulvid2');
+		$video3 = $this->input->post('video3');
+		$judulvid3 = $this->input->post('judulvid3');
+		$video4 = $this->input->post('video4');
+		$judulvid4 = $this->input->post('judulvid4');
+		$video5 = $this->input->post('video5');
+		$judulvid5 = $this->input->post('judulvid5');
+		$video6 = $this->input->post('video6');
+		$judulvid6 = $this->input->post('judulvid6');
+		$video7 = $this->input->post('video7');
+		$judulvid7 = $this->input->post('judulvid7');
+		$video8 = $this->input->post('video8');
+		$judulvid8 = $this->input->post('judulvid8');
+		$video9 = $this->input->post('video9');
+		$judulvid9 = $this->input->post('judulvid9');
+		$video10 = $this->input->post('video10');
+		$judulvid10 = $this->input->post('judulvid10');
 		$reset = $this->input->post('reset');
 
 		if (empty($nama_kursus) || empty($harga)) {
@@ -146,6 +165,25 @@ class Kursus extends CI_Controller
 				'nama_kursus' => $nama_kursus,
 				'harga' => $harga,
 				'video1' => $video1,
+				'judulvid1' => $judulvid1,
+				'video2' => $video2,
+				'judulvid2' => $judulvid2,
+				'video3' => $video3,
+				'judulvid3' => $judulvid3,
+				'video4' => $video4,
+				'judulvid4' => $judulvid4,
+				'video5' => $video5,
+				'judulvid5' => $judulvid5,
+				'video6' => $video6,
+				'judulvid6' => $judulvid6,
+				'video7' => $video7,
+				'judulvid7' => $judulvid7,
+				'video8' => $video8,
+				'judulvid8' => $judulvid8,
+				'video9' => $video9,
+				'judulvid9' => $judulvid9,
+				'video10' => $video10,
+				'judulvid10' => $judulvid10,
 			];
 			$this->Kursus_model->update1($id_kursus, $data1);
 			if ($reset == "on") {
