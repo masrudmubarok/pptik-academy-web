@@ -43,14 +43,14 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 1 : PENGENALAN HTML</b>
+                            <h5><b>PERTEMUAN 1 : <?= $krs->judulvid1; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><iframe style="margin-top: -5;" width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video1; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -59,13 +59,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 2 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 2 : <?= $krs->judulvid2; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video2; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -74,13 +74,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 3 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 3 : <?= $krs->judulvid3; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video3; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -89,13 +89,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 4 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 4 : <?= $krs->judulvid4; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video4; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -104,13 +104,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 5 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 5 : <?= $krs->judulvid5; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video5; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -119,13 +119,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 6 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 6 : <?= $krs->judulvid6; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video6; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -134,13 +134,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 7 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 7 : <?= $krs->judulvid7; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video7; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -149,13 +149,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 8 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 8 : <?= $krs->judulvid8; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video8; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -164,13 +164,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 9 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 9 : <?= $krs->judulvid9; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video9; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                     <tr>
@@ -179,13 +179,13 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 10 : PARAGRAF</b>
+                            <h5><b>PERTEMUAN 10 : <?= $krs->judulvid10; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/NBZ9Ro6UKV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video10; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                     </tr>
 
                 <?php endforeach; ?>

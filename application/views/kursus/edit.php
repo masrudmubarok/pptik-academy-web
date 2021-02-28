@@ -26,7 +26,7 @@
 </div>
 <div class="py-4">
   <div class="container">
-    <form id="c_form-h" method="post" action="<?= base_url('Kursus/update1'); ?>" enctype="multipart/form-data">
+    <form id="c_form-h" method="post" action="<?= base_url('Kursus/update'); ?>" enctype="multipart/form-data">
       <div class="form-group row">
         <div class="col-3">
           <input type="hidden" class="form-control" name="id_kursus" value="<?= $krs->id_kursus ?>" readonly>
@@ -66,127 +66,115 @@
       <div class="form-group row">
         <label for="judulvid1" class="col-2 col-form-label">Judul Video 1*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid1 ?>">
+          <input type="text" class="form-control" name="judulvid1" value="<?= $krs->judulvid1 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video2" class="col-2 col-form-label">Video 2*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video2 ?>">
+          <input type="text" class="form-control" name="video2" value="<?= $krs->video2 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid2" class="col-2 col-form-label">Judul Video 2*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid2 ?>">
+          <input type="text" class="form-control" name="judulvid2" value="<?= $krs->judulvid2 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video3" class="col-2 col-form-label">Video 3*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video3 ?>">
+          <input type="text" class="form-control" name="video3" value="<?= $krs->video3 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid3" class="col-2 col-form-label">Judul Video 3*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid3 ?>">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="video3" class="col-2 col-form-label">Video 3*</label>
-        <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video3 ?>">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="judulvid3" class="col-2 col-form-label">Judul Video 3*</label>
-        <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid3 ?>">
+          <input type="text" class="form-control" name="judulvid3" value="<?= $krs->judulvid3 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video4" class="col-2 col-form-label">Video 4*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video4 ?>">
+          <input type="text" class="form-control" name="video4" value="<?= $krs->video4 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid4" class="col-2 col-form-label">Judul Video 4*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid4 ?>">
+          <input type="text" class="form-control" name="judulvid4" value="<?= $krs->judulvid4 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video5" class="col-2 col-form-label">Video 5*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video5 ?>">
+          <input type="text" class="form-control" name="video5" value="<?= $krs->video5 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid5" class="col-2 col-form-label">Judul Video 5*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid5 ?>">
+          <input type="text" class="form-control" name="judulvid5" value="<?= $krs->judulvid5 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video6" class="col-2 col-form-label">Video 6*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video6 ?>">
+          <input type="text" class="form-control" name="video6" value="<?= $krs->video6 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid6" class="col-2 col-form-label">Judul Video 6*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid6 ?>">
+          <input type="text" class="form-control" name="judulvid6" value="<?= $krs->judulvid6 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video7" class="col-2 col-form-label">Video 7*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video7 ?>">
+          <input type="text" class="form-control" name="video7" value="<?= $krs->video7 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid7" class="col-2 col-form-label">Judul Video 7*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid7 ?>">
+          <input type="text" class="form-control" name="judulvid7" value="<?= $krs->judulvid7 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video8" class="col-2 col-form-label">Video 8*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video8 ?>">
+          <input type="text" class="form-control" name="video8" value="<?= $krs->video8 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid8" class="col-2 col-form-label">Judul Video 8*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid8 ?>">
+          <input type="text" class="form-control" name="judulvid8" value="<?= $krs->judulvid8 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video9" class="col-2 col-form-label">Video 9*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video9 ?>">
+          <input type="text" class="form-control" name="video9" value="<?= $krs->video9 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid9" class="col-2 col-form-label">Judul Video 9*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid9 ?>">
+          <input type="text" class="form-control" name="judulvid9" value="<?= $krs->judulvid9 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="video10" class="col-2 col-form-label">Video 10*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->video10 ?>">
+          <input type="text" class="form-control" name="video10" value="<?= $krs->video10 ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="judulvid10" class="col-2 col-form-label">Judul Video 10*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid10 ?>">
+          <input type="text" class="form-control" name="judulvid10" value="<?= $krs->judulvid10 ?>">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Ubah</button>

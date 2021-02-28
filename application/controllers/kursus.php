@@ -123,7 +123,7 @@ class Kursus extends CI_Controller
 	{
 		$data['main_content'] = 'kursus/edit';
 		$data['page_title'] = 'Edit Data Kursus';
-		$data['krs'] = $this->Kursus_model->getKrs($id_kursus);
+		$data['krs'] = $this->Kursus_model->getKkrs($id_kursus);
 		$data['ttr_list'] = $this->Kursus_model->getAllTtrs();
 		$this->load->view('template', $data);
 	}
@@ -160,7 +160,7 @@ class Kursus extends CI_Controller
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
 			redirect('Kursus/edit_krs/' . $id_kursus);
 		} else {
-			$data1 = [
+			$data = [
 				'id_tutor' => $id_tutor,
 				'nama_kursus' => $nama_kursus,
 				'harga' => $harga,
@@ -185,7 +185,7 @@ class Kursus extends CI_Controller
 				'video10' => $video10,
 				'judulvid10' => $judulvid10,
 			];
-			$this->Kursus_model->update1($id_kursus, $data1);
+			$this->Kursus_model->update($id_kursus, $data);
 			if ($reset == "on") {
 				$this->Kursus_model->reset($id_kursus);
 			}

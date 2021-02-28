@@ -25,17 +25,20 @@ class Kursus_model extends CI_Model
     return $query->result();
   }
 
-  public function getKkrs()
+  public function getKkrs($id_kursus)
   {
-    $this->db->select('*');
-    $this->db->from('kursus');
-    $query = $this->db->get();
-    return $query->result();
+    return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
   }
 
   public function getKrs($id_kursus)
   {
-    return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
+    // return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
+    $this->db->select('*');
+    $this->db->from('kursus');
+    $this->db->join('tutor', 'kursus.id_tutor = tutor.id_tutor');
+    $this->db->where('id_kursus', $id_kursus);
+    $query = $this->db->get();
+    return $query->result();
   }
 
   function insert($data)
