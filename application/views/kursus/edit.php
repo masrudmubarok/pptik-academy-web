@@ -60,10 +60,136 @@
       <div class="form-group row">
         <label for="video1" class="col-2 col-form-label">Video 1*</label>
         <div class="col-5">
-          <input type="text" class="form-control" name="video1" value="<?= $krsd->video1 ?>">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video1 ?>">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Lanjut</button>
+      <div class="form-group row">
+        <label for="judulvid1" class="col-2 col-form-label">Judul Video 1*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid1 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video2" class="col-2 col-form-label">Video 2*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video2 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid2" class="col-2 col-form-label">Judul Video 2*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid2 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video3" class="col-2 col-form-label">Video 3*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video3 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid3" class="col-2 col-form-label">Judul Video 3*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid3 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video3" class="col-2 col-form-label">Video 3*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video3 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid3" class="col-2 col-form-label">Judul Video 3*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid3 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video4" class="col-2 col-form-label">Video 4*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video4 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid4" class="col-2 col-form-label">Judul Video 4*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid4 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video5" class="col-2 col-form-label">Video 5*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video5 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid5" class="col-2 col-form-label">Judul Video 5*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid5 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video6" class="col-2 col-form-label">Video 6*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video6 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid6" class="col-2 col-form-label">Judul Video 6*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid6 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video7" class="col-2 col-form-label">Video 7*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video7 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid7" class="col-2 col-form-label">Judul Video 7*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid7 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video8" class="col-2 col-form-label">Video 8*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video8 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid8" class="col-2 col-form-label">Judul Video 8*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid8 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video9" class="col-2 col-form-label">Video 9*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video9 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid9" class="col-2 col-form-label">Judul Video 9*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid9 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="video10" class="col-2 col-form-label">Video 10*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->video10 ?>">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="judulvid10" class="col-2 col-form-label">Judul Video 10*</label>
+        <div class="col-5">
+          <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid10 ?>">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
   </div>
 </div>

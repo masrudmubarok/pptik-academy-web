@@ -23,7 +23,7 @@ class Kursus extends CI_Controller
 		$id_kursus = $this->uri->segment(3);
 		$data['main_content'] = 'kursus/list_detail';
 		$data['page_title'] = 'Detail Courses';
-		$data['krs_list'] = $this->Kursus_model->getKrsd($id_kursus);
+		$data['krs_list'] = $this->Kursus_model->getKrs($id_kursus);
 		$this->load->view('template', $data);
 	}
 
