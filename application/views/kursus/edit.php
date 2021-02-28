@@ -189,7 +189,7 @@
           <input type="text" class="form-control" name="video1" value="<?= $krs->judulvid10 ?>">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Simpan</button>
+      <button type="submit" class="btn btn-primary">Ubah</button>
     </form>
   </div>
 </div>
