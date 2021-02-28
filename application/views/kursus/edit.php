@@ -39,6 +39,12 @@
         </div>
       </div>
       <div class="form-group row">
+        <label for="deskripsi" class="col-2 col-form-label">Deskripsi*</label>
+        <div class="col-5">
+          <textarea name="deskripsi" class="form-control" rows="5" cols="40"><?= $krs->deskripsi ?></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
         <label for="nama_tutor" class="col-2 col-form-label">Nama Tutor*</label>
         <div class="col-5">
           <select name="id_tutor" class="custom-select">
@@ -177,6 +183,7 @@
           <input type="text" class="form-control" name="judulvid10" value="<?= $krs->judulvid10 ?>">
         </div>
       </div>
+      <br>
       <button type="submit" class="btn btn-primary">Ubah</button>
     </form>
   </div>

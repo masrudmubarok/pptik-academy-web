@@ -36,6 +36,12 @@
              </div>
            </div>
            <div class="form-group row">
+             <label for="deskripsi" class="col-4 col-form-label">Deskripsi*</label>
+             <div class="col-9">
+               <textarea name="deskripsi" class="form-control" rows="5" cols="40"></textarea>
+             </div>
+           </div>
+           <div class="form-group row">
              <label for="nama_tutor" class="col-4 col-form-label">Nama Tutor*</label>
              <div class="col-9">
                <select name="id_tutor" class="custom-select">

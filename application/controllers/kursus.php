@@ -39,6 +39,7 @@ class Kursus extends CI_Controller
 	{
 		$id_tutor 	= $this->input->post('id_tutor');
 		$nama_kursus = $this->input->post('nama_kursus');
+		$deskripsi = $this->input->post('deskripsi');
 		$harga = $this->input->post('harga');
 		$icon = $_FILES['icon'];
 		$video1 = $this->input->post('video1');
@@ -62,7 +63,7 @@ class Kursus extends CI_Controller
 		$video10 = $this->input->post('video10');
 		$judulvid10 = $this->input->post('judulvid10');
 
-		if (empty($nama_kursus) || empty($harga)) {
+		if (empty($nama_kursus) || empty($deskripsi) || empty($harga)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
 			redirect('Kursus/add_krs');
 		} else {
@@ -83,6 +84,7 @@ class Kursus extends CI_Controller
 			$data = [
 				'id_tutor' => $id_tutor,
 				'nama_kursus' => $nama_kursus,
+				'deskripsi' => $deskripsi,
 				'harga' => $harga,
 				'icon' => $icon,
 				'video1' => $video1,
@@ -133,6 +135,7 @@ class Kursus extends CI_Controller
 		$id_kursus 	= $this->input->post('id_kursus');
 		$id_tutor 	= $this->input->post('id_tutor');
 		$nama_kursus = $this->input->post('nama_kursus');
+		$deskripsi = $this->input->post('deskripsi');
 		$harga = $this->input->post('harga');
 		$video1 = $this->input->post('video1');
 		$judulvid1 = $this->input->post('judulvid1');
@@ -163,6 +166,7 @@ class Kursus extends CI_Controller
 			$data = [
 				'id_tutor' => $id_tutor,
 				'nama_kursus' => $nama_kursus,
+				'deskripsi' => $deskripsi,
 				'harga' => $harga,
 				'video1' => $video1,
 				'judulvid1' => $judulvid1,
