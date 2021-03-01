@@ -26,6 +26,24 @@ class Siswa_model extends CI_Model
     return $query->result();
   }
 
+  public function getAllAkrs()
+  {
+    $this->db->distinct();
+    $this->db->select('*');
+    $this->db->from('ambil_kursus');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
+  public function getAllKrss()
+  {
+    $this->db->distinct();
+    $this->db->select('*');
+    $this->db->from('kursus');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function getSwa($id_siswa)
   {
     return $this->db->where('id_siswa', $id_siswa)->get('siswa')->row();

@@ -38,6 +38,7 @@ class Siswa extends CI_Controller
 	{
 		$param['main_content'] = 'siswa/add_detail';
 		$param['page_title'] = 'Tambah Detail Siswa';
+		// $param['swas_list'] = $this->Siswa_model->getAllSwa();
 		$param['swas_list'] = $this->Siswa_model->getswas();
 		$param['akrss_list'] = $this->Siswa_model->getAllAkrs();
 		$param['krss_list'] = $this->Siswa_model->getAllKrss();
@@ -92,12 +93,7 @@ class Siswa extends CI_Controller
 				$config['allowed_types'] = 'jpg|png|gif|tiff|pdf';
 
 				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('sertifikat')) {
-					echo "Gagal Upload";
-					die();
-				} else {
-					$sertifikat = $this->upload->data('file_name');
-				}
+				$sertifikat = $this->upload->data('file_name');
 			}
 
 			$data2 = [
