@@ -51,119 +51,38 @@
     </div>
 
     <br>
-    <p></p>
-    <script type="text/javascript">
-        window.onload = function() {
-
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                title: {
-                    text: "Cashflow per Semester"
-                },
-                axisY: {
-                    title: "Pemasukan",
-                    titleFontColor: "#4F81BC",
-                    lineColor: "#4F81BC",
-                    labelFontColor: "#4F81BC",
-                    tickColor: "#4F81BC"
-                },
-                axisY2: {
-                    title: "Pengeluaran",
-                    titleFontColor: "#C0504E",
-                    lineColor: "#C0504E",
-                    labelFontColor: "#C0504E",
-                    tickColor: "#C0504E"
-                },
-                toolTip: {
-                    shared: true
-                },
-                legend: {
-                    cursor: "pointer",
-                    itemclick: toggleDataSeries
-                },
-                data: [{
-                        type: "column",
-                        name: "Pemasukan",
-                        legendText: "Pemasukan",
-                        showInLegend: true,
-                        dataPoints: [{
-                                label: "Agustus",
-                                y: <?php echo $in_agustus; ?>
-                            },
-                            {
-                                label: "September",
-                                y: <?php echo $in_september; ?>
-                            },
-                            {
-                                label: "Oktober",
-                                y: <?php echo $in_oktober; ?>
-                            },
-                            {
-                                label: "November",
-                                y: <?php echo $in_november; ?>
-                            },
-                            {
-                                label: "Desember",
-                                y: <?php echo $in_desember; ?>
-                            },
-                            {
-                                label: "January",
-                                y: <?php echo $in_januari; ?>
-                            }
-                        ]
-                    },
-                    {
-                        type: "column",
-                        name: "Pengeluaran",
-                        legendText: "Pengeluaran",
-                        axisYType: "secondary",
-                        showInLegend: true,
-                        dataPoints: [{
-                                label: "Agustus",
-                                y: <?php echo $out_agustus; ?>
-                            },
-                            {
-                                label: "September",
-                                y: <?php echo $out_september; ?>
-                            },
-                            {
-                                label: "Oktober",
-                                y: <?php echo $out_oktober; ?>
-                            },
-                            {
-                                label: "November",
-                                y: <?php echo $out_november; ?>
-                            },
-                            {
-                                label: "Desember",
-                                y: <?php echo $out_desember; ?>
-                            },
-                            {
-                                label: "January",
-                                y: <?php echo $out_januari; ?>
-                            }
-                        ]
-                    }
-                ]
-            });
-            chart.render();
-
-            function toggleDataSeries(e) {
-                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                    e.dataSeries.visible = false;
-                } else {
-                    e.dataSeries.visible = true;
-                }
-                chart.render();
-            }
-
-        }
-    </script>
+    <center>
+        <h2>Top Courses</h2>
+    </center>
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-borderless">
+                            <tbody>
+                                <?php
+                                $i = 1;
+                                $no = 1;
+                                foreach ($top as $tpk) { ?>
+                                    <tr>
+                                        <td class="text-center"><?php echo $no++; ?></td>
+                                        <td class="text-left"><?php echo $tpk->nama_kursus ?></td>
+                                        <td class="text-center"><?php echo $tpk->jumlah ?> <sub style="color: #778899;">intakes</sub></td>
+                                    </tr>
+                                <?php $i++;
+                                } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </head>
 
 <body>
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-    <script src="<?= base_url('assets/canvasjs/js/canvasjs.min.js') ?>"></script>
+
 </body>
 
 </html>

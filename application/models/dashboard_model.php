@@ -27,4 +27,11 @@ class Dashboard_model extends CI_Model
     $result = $this->db->query($sql);
     return $result->row()->jumlah_siswa;
   }
+
+  public function top_kursus()
+  {
+    $query = $this->db->query("SELECT DISTINCT kursus.nama_kursus AS nama_kursus, COUNT(DISTINCT ambil_kursus.id_ambilkursus) AS jumlah FROM ambil_kursus JOIN kursus WHERE ambil_kursus.id_kursus = kursus.id_kursus GROUP BY ambil_kursus.id_kursus ORDER BY jumlah DESC");
+    $result = $query->result();
+    return $result;
+  }
 }

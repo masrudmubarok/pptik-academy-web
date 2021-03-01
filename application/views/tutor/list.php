@@ -45,10 +45,12 @@
               </tr>
             </thead>
             <tbody>
-              <?php $i = 1;
+              <?php
+              $i = 1;
+              $no = 1;
               foreach ($ttr_list as $ttr) { ?>
                 <tr>
-                  <td class="text-center"><?php echo $ttr->id_tutor; ?></td>
+                  <td class="text-center"><?php echo $no++ ?></td>
                   <td class="text-left"><?php echo $ttr->nama_tutor ?></td>
                   <td class="text-center"><?php echo $ttr->keahlian ?></td>
                   <td class="text-center">

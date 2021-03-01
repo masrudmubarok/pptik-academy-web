@@ -46,10 +46,12 @@
               </tr>
             </thead>
             <tbody>
-              <?php $i = 1;
+              <?php
+              $i = 1;
+              $no = 1;
               foreach ($krs_list as $krs) { ?>
                 <tr>
-                  <td class="text-center"><?php echo $krs->id_kursus; ?></td>
+                  <td class="text-center"><?php echo $no++ ?></td>
                   <td class="text-left"><?php echo $krs->nama_kursus ?></td>
                   <td class="text-left"><?php echo $krs->nama_tutor ?></td>
                   <td class="text-center">Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></td>
