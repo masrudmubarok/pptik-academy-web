@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_swa'); ?>"><i class="fa fa-plus"></i>&ensp;Ambil Kursus</a></div>
+            <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_dswa'); ?>"><i class="fa fa-plus"></i>&ensp;Ambil Kursus</a></div>
         </div>
     </div>
 </div>

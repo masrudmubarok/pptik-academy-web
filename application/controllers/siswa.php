@@ -18,12 +18,13 @@ class Siswa extends CI_Controller
 		$this->load->view('template', $param);
 	}
 
-	public function detail()
+	public function lihat_detail($id_siswa)
 	{
-		$param['main_content'] = 'siswa/list_detail';
-		$param['page_title'] = 'Students Courses';
-		$param['swa_list'] = $this->Siswa_model->getAllSwa();
-		$this->load->view('template', $param);
+		$id_siswa = $this->uri->segment(3);
+		$data['main_content'] = 'siswa/list_detail';
+		$data['page_title'] = 'Edit Data Siswa';
+		$data['swa_list'] = $this->Siswa_model->getSwad($id_siswa);
+		$this->load->view('template', $data);
 	}
 
 	public function add_swa()
