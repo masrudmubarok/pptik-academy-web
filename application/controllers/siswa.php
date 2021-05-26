@@ -90,7 +90,8 @@ class Siswa extends CI_Controller
 			if ($sertifikat = '') {
 			} else {
 				$config['upload_path'] = './assets/uploads';
-				$config['allowed_types'] = 'jpg|png|gif|tiff|pdf';
+				$config['allowed_types'] = 'mkv|mp4|pdf|jpg|png|gif|tiff';
+				$config['max_size'] = 256000;
 
 				$this->load->library('upload', $config);
 				$sertifikat = $this->upload->data('file_name');
@@ -177,15 +178,11 @@ class Siswa extends CI_Controller
 			if ($sertifikat = '') {
 			} else {
 				$config['upload_path'] = './assets/uploads';
-				$config['allowed_types'] = 'jpg|png|gif|tiff';
+				$config['allowed_types'] = 'mkv|mp4|pdf|jpg|png|gif|tiff';
+				$config['max_size'] = 256000;
 
 				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('sertifikat')) {
-					echo "Gagal Upload";
-					die();
-				} else {
-					$sertifikat = $this->upload->data('file_name');
-				}
+				$sertifikat = $this->upload->data('file_name');
 			}
 
 			$data2 = [

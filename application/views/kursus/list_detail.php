@@ -14,21 +14,21 @@
                 <?php foreach ($krs_list as $krs) : ?>
 
                     <tr>
-                        <td rowspan="3" colspan="2"><img src="<?php echo base_url('assets/uploads/') . $krs->icon ?>" style="width : 50%; margin-top: 20px; margin-left: 20px"></td>
+                        <td rowspan="3" colspan="2"><img src="<?= $krs->icon ?>" style="width : 50%; margin-top: 20px; margin-left: 20px"></td>
                         <td colspan="3">
-                            <h2 style="margin-top: 20px; margin-left: -190px"><?= $krs->nama_kursus; ?></h2>
+                            <h2 style="margin-top: 20px; margin-left: -230px; margin-right: 30px;"><?= $krs->nama_kursus; ?></h2>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="3">
-                            <p style="margin-top: -2%; margin-left: -190px; text-align: justify;"><?= $krs->deskripsi; ?></p>
+                            <p style="margin-top: -2%; margin-left: -230px; margin-right: 30px; text-align: justify;"><?= $krs->deskripsi; ?></p>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="3">
-                            <p style="margin-top: -2%; margin-left: -190px"><b>Materi :</b> <?= $krs->nama_tutor; ?> &nbsp&nbsp <b>Harga :</b> Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></p>
+                            <p style="margin-top: -2%; margin-left: -230px; margin-right: 30px;"><b>Materi :</b> <?= $krs->nama_tutor; ?> &nbsp&nbsp <b>Harga :</b> Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></p>
                         </td>
                     </tr>
 
@@ -42,14 +42,21 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 1 : <?= $krs->judulvid1; ?></b>
+                            <h5><b><?= $krs->judul1; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video1; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video1; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul1; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -58,13 +65,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 2 : <?= $krs->judulvid2; ?></b>
+                            <h5><b><?= $krs->judul2; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video2; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video2; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul2; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -73,13 +87,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 3 : <?= $krs->judulvid3; ?></b>
+                            <h5><b><?= $krs->judul3; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video3; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video3; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul3; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -88,13 +109,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 4 : <?= $krs->judulvid4; ?></b>
+                            <h5><b><?= $krs->judul4; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video4; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video4; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul4; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -103,13 +131,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 5 : <?= $krs->judulvid5; ?></b>
+                            <h5><b><?= $krs->judul5; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video5; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video5; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul5; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -118,13 +153,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 6 : <?= $krs->judulvid6; ?></b>
+                            <h5><b><?= $krs->judul6; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video6; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video6; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul6; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -133,13 +175,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 7 : <?= $krs->judulvid7; ?></b>
+                            <h5><?= $krs->judul7; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video7; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video7; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul7; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -148,13 +197,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 8 : <?= $krs->judulvid8; ?></b>
+                            <h5><b><?= $krs->judul8; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video8; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video8; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul8; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -163,13 +219,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 9 : <?= $krs->judulvid9; ?></b>
+                            <h5><b><?= $krs->judul9; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video9; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video9; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul9; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                     <tr>
@@ -178,13 +241,20 @@
 
                     <tr>
                         <td colspan="4">
-                            <h5><b>PERTEMUAN 10 : <?= $krs->judulvid10; ?></b>
+                            <h5><b><?= $krs->judul10; ?></b>
                                 <hr>
                             </h5>
                         </td>
                     </tr>
                     <tr>
-                        <td><iframe width="450" height="253" src="https://www.youtube.com/embed/<?= $krs->video10; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                        <td colspan="2">
+                            <video controls width="530" height="330">
+                                <source src="<?php echo base_url() ?>assets/video/<?= $krs->video10; ?>" type="video/mp4">
+                            </video>
+                        </td>
+                        <td colspan="2">
+                            <embed type="application/pdf" src="<?php echo base_url() ?>assets/modul/<?= $krs->modul10; ?>" width="530" height="330"></embed>
+                        </td>
                     </tr>
 
                 <?php endforeach; ?>
