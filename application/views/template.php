@@ -41,7 +41,7 @@
 <body>
 	<div class="d-flex" id="wrapper">
 		<nav class="bg-dark border-right" id="sidebar-wrapper" style="margin-right: -1px">
-			<div class="sidebar-heading" style="background:#8AB3F1;">
+			<div class="sidebar-heading" style="background:#4383CB;">
 				<center><img style="margin-bottom: -10px;margin-top: -12px" src="<?= base_url('assets/images/pptik_academy2.png') ?>" width="190px" height="58px"></center>
 			</div>
 			<div class="list-group list-group-flush">
@@ -50,12 +50,14 @@
 				<a href="<?= base_url('Kursus'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-book"></span> &nbsp;Courses</a>
 				<a href="<?= base_url('Tutor'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-user"></span> &nbsp;&nbsp;Tutor</a>
 				<a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-users"></span> &nbsp;Students</a>
+				<a href="<?= base_url('Ujian'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-file"></span> &nbsp;&nbsp;Exam</a>
+				<a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-shopping-cart"></span> &nbsp;Purchase</a>
 			</div>
 		</nav>
 		<!-- /#sidebar-wrapper -->
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
-			<nav class="navbar navbar-expand-lg border-bottom" style="background:#8AB3F1">
+			<nav class="navbar navbar-expand-lg border-bottom" style="background:#4383CB">
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto mt-2 my-lg-1">
 						<li class="nav-item" style="color: white"> <b> <?php echo $page_title ?> </b> <br></li>
