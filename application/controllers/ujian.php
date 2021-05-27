@@ -28,32 +28,28 @@ class Ujian extends CI_Controller
 
     public function update()
     {
-        $id_siswa = $this->input->post('id_siswa');
-        $nama_siswa = $this->input->post('nama_siswa');
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $email = $this->input->post('email');
-        $kota = $this->input->post('kota');
-        $negara = $this->input->post('negara');
-        if (empty($nama_siswa) || empty($username) || empty($password)) {
+        $id_ujian = $this->input->post('id_ujian');
+        $tanggal_daftar = $this->input->post('tanggal_daftar');
+        $status_ujian = $this->input->post('status_ujian');
+        $status_sertifikat = $this->input->post('status_sertifikat');
+        $no_sertifikat = $this->input->post('no_sertifikat');
+        if (empty($no_sertifikat)) {
             $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-            redirect('Ujian/edit_swa/' . $id_siswa);
+            redirect('Ujian/edit_ujian/' . $id_ujian);
         } else {
-            $data1 = [
-                'id_siswa' => $id_siswa,
-                'nama_siswa' => $nama_siswa,
-                'username' => $username,
-                'password' => $password,
-                'email' => $email,
-                'kota' => $kota,
-                'negara' => $negara,
+            $data = [
+                'id_ujian' => $id_ujian,
+                'tanggal_daftar' => $tanggal_daftar,
+                'status_ujian' => $status_ujian,
+                'status_sertifikat' => $status_sertifikat,
+                'no_sertifikat' => $no_sertifikat,
             ];
-            $this->Siswa_model->update1($id_siswa, $data1);
+            $this->Ujian_model->update($id_ujian, $data);
             // if ($reset == "on") {
             // 	$this->Siswa_model->reset($id_siswa);
             // }
 
-            $this->session->set_flashdata('success_message', 'Data siswa berhasil diubah');
+            $this->session->set_flashdata('success_message', 'Data ujian berhasil diubah');
             redirect('Ujian');
         }
     }
@@ -62,6 +58,6 @@ class Ujian extends CI_Controller
     {
         $this->Ujian_model->delete($id_ujian);
         $this->session->set_flashdata('success_message', 'Data pengambilan ujian siswa berhasil dihapus');
-        redirect('Ujian/detail');
+        redirect('Ujian');
     }
 }

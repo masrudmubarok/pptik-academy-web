@@ -19,7 +19,6 @@ class Ujian_model extends CI_Model
 
     public function getSiswa()
     {
-        $this->db->distinct();
         $this->db->select('*');
         $this->db->from('siswa');
         $query = $this->db->get();
@@ -28,7 +27,6 @@ class Ujian_model extends CI_Model
 
     public function getKursus()
     {
-        $this->db->distinct();
         $this->db->select('*');
         $this->db->from('kursus');
         $query = $this->db->get();
