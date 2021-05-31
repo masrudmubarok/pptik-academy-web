@@ -70,9 +70,9 @@ class Tutor extends CI_Controller
                 'keahlian' => $keahlian,
             ];
             $this->Tutor_model->update($id_tutor, $data);
-            if ($reset == "on") {
-                $this->Tutor_model->reset($id_tutor);
-            }
+            // if ($reset == "on") {
+            //     $this->Tutor_model->reset($id_tutor);
+            // }
 
             $this->session->set_flashdata('success_message', 'Data tutor berhasil diubah');
             redirect('Tutor');
