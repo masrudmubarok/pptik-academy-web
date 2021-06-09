@@ -1,0 +1,74 @@
+<?php
+class Pembelian_model extends CI_Model
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
+
+    public function getAllPembelian()
+    {
+        $this->db->select('*');
+        $this->db->from('ambil_kursus');
+        $this->db->join('siswa', 'ambil_kursus.id_siswa = siswa.id_siswa');
+        $this->db->join('kursus', 'ambil_kursus.id_kursus = kursus.id_kursus');
+        $this->db->order_by('tanggal_ambilkursus', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getSiswa()
+    {
+        $this->db->select('*');
+        $this->db->from('siswa');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getKursus()
+    {
+        $this->db->select('*');
+        $this->db->from('kursus');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getPembelianId($id_ambilkursus)
+    {
+        return $this->db->where('id_ambilkursus', $id_ambilkursus)->get('ambil_kursus')->row();
+    }
+
+    public function getPembelianId1($id_ambilkursus)
+    {
+        $this->db->select('*');
+        $this->db->from('ambil_kursus');
+        $this->db->join('siswa', 'ambil_kursus.id_siswa = siswa.id_siswa');
+        $this->db->join('kursus', 'ambil_kursus.id_kursus = kursus.id_kursus');
+        $this->db->where('ambil_kursus.id_ambilkursus', $id_ambilkursus);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getSiswaId($id_siswa)
+    {
+        return $this->db->where('id_siswa', $id_siswa)->get('siswa')->row();
+    }
+
+    public function getKursusId($id_kursus)
+    {
+        return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
+    }
+
+    public function update($id_ambilkursus, $data1)
+    {
+        $this->db->where('id_ambilkursus', $id_ambilkursus)->update('ambil_kursus', $data1);
+        return $this->db->affected_rows();
+    }
+
+    public function delete($id_ambilkursus)
+    {
+        $this->db->where('id_ambilkursus', $id_ambilkursus)->delete('ambil_kursus');
+        return $this->db->affected_rows();
+    }
+}

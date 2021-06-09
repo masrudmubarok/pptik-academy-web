@@ -38,7 +38,7 @@
                     <div class="form-group row">
                         <label for="keterangan" class="col-4 col-form-label">Keterangan*</label>
                         <div class="col-9">
-                            <input type="text" class="form-control" name="keterangan">
+                            <textarea name="keterangan" class="form-control" rows="5" cols="40"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">

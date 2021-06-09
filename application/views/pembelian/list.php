@@ -23,14 +23,6 @@
         </div>
     <?php } ?>
 </div>
-<div class="py-0">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Siswa/add_dswa'); ?>"><i class="fa fa-plus"></i>&ensp;Ambil Kursus</a></div>
-        </div>
-    </div>
-</div>
 <div class="py-4">
     <div class="container">
         <div class="row">
@@ -41,26 +33,32 @@
                             <tr>
                                 <th class="text-center" style="width: 20px">NO</th>
                                 <th class="text-center" style="width: 150px">NAMA SISWA</th>
-                                <th class="text-center" style="width: 150px">KURSUS</th>
-                                <th class="text-center" style="width: 150px">TANGGAL AMBIl KURSUS</th>
+                                <th class="text-center" style="width: 150px">NAMA KURSUS</th>
+                                <th class="text-center" style="width: 70px">TANGGAL PEMBELIAN</th>
+                                <th class="text-center" style="width: 80px">STATUS KURSUS</th>
+                                <th class="text-center" style="width: 80px">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $i = 1;
                             $no = 1;
-                            foreach ($swa_list as $swa) { ?>
+                            foreach ($pembelian_list as $beli) { ?>
                                 <tr>
                                     <td class="text-center" style="width: 20px"><?php echo $no++ ?></td>
-                                    <td class="text-left"><?php echo $swa->nama_siswa; ?></td>
-                                    <td class="text-left" style="width: 250px"><?php echo $swa->nama_kursus; ?></td>
-                                    <td class="text-center"><?php echo $swa->tanggal_ambilkursus; ?></td>
+                                    <td class="text-left"><?php echo $beli->nama_siswa; ?></td>
+                                    <td class="text-left" style="width: 230px;"><?php echo $beli->nama_kursus; ?></td>
+                                    <td class="text-center"><?php echo $beli->tanggal_ambilkursus; ?></td>
+                                    <td class="text-center"><?php echo $beli->status_kursus; ?></td>
+                                    <td class="text-center" style="width: 80px">
+                                        <a href="<?= base_url('Pembelian/edit_pembelian/' . $beli->id_ambilkursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $beli->id_ambilkursus; ?>" data-title="<?php echo $beli->id_ambilkursus; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                    </td>
                                 </tr>
                             <?php $i++;
                             } ?>
                         </tbody>
                     </table>
-                    <a href="<?php echo base_url('Siswa'); ?>"><i class="fa fa-undo"></i>&ensp;Kembali</a>
                 </div>
             </div>
         </div>
@@ -73,11 +71,11 @@
                 <h5 class="modal-title">Konfirmasi Penghapusan</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
             </div>
             <div class="modal-body">
-                <p>Anda yakin ingin menghapus data pengambilan kursus siswa yang dipilih?</p>
-                <p id="mhstitle"></p>
+                <p>Anda yakin ingin menghapus data pembelian kursus yang dipilih?</p>
+                <p id="pembeliantitle"></p>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo base_url() ?>Siswa/delete/<?php echo $swa->id_ambilkursus ?>" class="btn btn-danger">Delete</a>
+                <a href="<?php echo base_url() ?>Pembelian/delete/<?php echo $beli->id_ambilkursus ?>" class="btn btn-danger">Delete</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -86,10 +84,10 @@
 <script>
     $('#ModalDelete').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
-        var swa_id = button.data('id')
+        var pembelian_id = button.data('id')
         var modal = $(this)
-        var swa_title = button.data('title');
-        document.getElementById('swatitle').innerHTML = swa_title;
-        modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Siswa/delete/" + swa_id)
+        var pembelian_title = button.data('title');
+        document.getElementById('pembeliantitle').innerHTML = pembelian_title;
+        modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Pembelian/delete/" + pembelian_id)
     })
 </script>
