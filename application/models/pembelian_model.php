@@ -13,7 +13,7 @@ class Pembelian_model extends CI_Model
         $this->db->from('ambil_kursus');
         $this->db->join('siswa', 'ambil_kursus.id_siswa = siswa.id_siswa');
         $this->db->join('kursus', 'ambil_kursus.id_kursus = kursus.id_kursus');
-        $this->db->order_by('tanggal_ambilkursus', 'DESC');
+        $this->db->order_by('transaction_time', 'DESC');
         $query = $this->db->get();
         return $query->result();
     }

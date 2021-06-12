@@ -32,10 +32,12 @@
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 20px">NO</th>
-                                <th class="text-center" style="width: 150px">NAMA SISWA</th>
+                                <th class="text-center" style="width: 100px">ID ORDER</th>
+                                <th class="text-center" style="width: 120px">NAMA SISWA</th>
                                 <th class="text-center" style="width: 150px">NAMA KURSUS</th>
-                                <th class="text-center" style="width: 70px">TANGGAL PEMBELIAN</th>
-                                <th class="text-center" style="width: 80px">STATUS KURSUS</th>
+                                <th class="text-center" style="width: 80px">JUMLAH</th>
+                                <th class="text-center" style="width: 80px">WAKTU</th>
+                                <th class="text-center" style="width: 80px">STATUS</th>
                                 <th class="text-center" style="width: 80px">AKSI</th>
                             </tr>
                         </thead>
@@ -46,11 +48,14 @@
                             foreach ($pembelian_list as $beli) { ?>
                                 <tr>
                                     <td class="text-center" style="width: 20px"><?php echo $no++ ?></td>
+                                    <td class="text-left"><?php echo $beli->order_id; ?></td>
                                     <td class="text-left"><?php echo $beli->nama_siswa; ?></td>
                                     <td class="text-left" style="width: 230px;"><?php echo $beli->nama_kursus; ?></td>
-                                    <td class="text-center"><?php echo $beli->tanggal_ambilkursus; ?></td>
-                                    <td class="text-center"><?php echo $beli->status_kursus; ?></td>
+                                    <td class="text-center"><?php echo $beli->gross_amount; ?></td>
+                                    <td class="text-center"><?php echo $beli->transaction_time; ?></td>
+                                    <td class="text-center"><?php echo $beli->transaction_status; ?></td>
                                     <td class="text-center" style="width: 80px">
+                                        <a href="<?= base_url('Pembelian/lihat_detail/' . $beli->id_ambilkursus) ?>"><i class="fa fa-eye text-secondary"></i></a>
                                         <a href="<?= base_url('Pembelian/edit_pembelian/' . $beli->id_ambilkursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $beli->id_ambilkursus; ?>" data-title="<?php echo $beli->id_ambilkursus; ?>"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
