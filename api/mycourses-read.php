@@ -3,7 +3,7 @@
 
  $id_siswa = $_POST['id_siswa'];
 
-  $query = "SELECT * FROM siswa, ambil_kursus, kursus, tutor WHERE siswa.id_siswa = ambil_kursus.id_siswa AND ambil_kursus.id_kursus = kursus.id_kursus AND kursus.id_tutor = tutor.id_tutor AND siswa.id_siswa='$id_siswa' AND ambil_kursus.status_kursus='settlement'";
+  $query = "SELECT * FROM siswa, ambil_kursus, kursus, tutor WHERE siswa.id_siswa = ambil_kursus.id_siswa AND ambil_kursus.id_kursus = kursus.id_kursus AND kursus.id_tutor = tutor.id_tutor AND siswa.id_siswa='$id_siswa' AND ambil_kursus.transaction_status='settlement'";
 
   $hasil = mysqli_query($con, $query);
   if (mysqli_num_rows($hasil) > 0) {
