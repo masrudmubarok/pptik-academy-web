@@ -29,16 +29,18 @@ class Pembelian extends CI_Controller
     public function update()
     {
         $id_ambilkursus = $this->input->post('id_ambilkursus');
-        $status_kursus = $this->input->post('status_kursus');
-        $tanggal_ambilkursus = $this->input->post('tanggal_ambilkursus');
-        if (empty($no_sertifikat)) {
+        $gross_amount = $this->input->post('gross_amount');
+        $transaction_time = $this->input->post('transaction_time');
+        $transaction_status = $this->input->post('transaction_status');
+        if (empty($gross_amount)) {
             $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
             redirect('Pembelian/edit_pembelian/' . $id_ambilkursus);
         } else {
             $data = [
                 'id_ambilkursus' => $id_ambilkursus,
-                'status_kursus' => $status_kursus,
-                'tanggal_ambilkursus' => $tanggal_ambilkursus,
+                'gross_amount' => $gross_amount,
+                'transaction_time' => $transaction_time,
+                'transaction_status' => $transaction_status,
             ];
             $this->Pembelian_model->update($id_ambilkursus, $data);
             // if ($reset == "on") {
