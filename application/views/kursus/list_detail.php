@@ -14,7 +14,7 @@
                 <?php foreach ($krs_list as $krs) : ?>
 
                     <tr>
-                        <td rowspan="3" colspan="2"><img src="<?= $krs->icon ?>" style="width : 50%; margin-top: 20px; margin-left: 20px"></td>
+                        <td rowspan="3" colspan="2"><img src="<?php echo base_url() ?>assets/icon/<?= $krs->icon; ?>" style="width : 50%; margin-top: 20px; margin-left: 20px"></td>
                         <td colspan="3">
                             <h2 style="margin-top: 20px; margin-left: -230px; margin-right: 30px;"><?= $krs->nama_kursus; ?></h2>
                         </td>
@@ -28,7 +28,7 @@
 
                     <tr>
                         <td colspan="3">
-                            <p style="margin-top: -2%; margin-left: -230px; margin-right: 30px;"><b>Materi :</b> <?= $krs->nama_tutor; ?> &nbsp&nbsp <b>Harga :</b> Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></p>
+                            <p style="margin-top: -2%; margin-left: -230px; margin-right: 30px;"><b>Tutor :</b> <?= $krs->nama_tutor; ?> &nbsp&nbsp <b>Harga :</b> Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></p>
                         </td>
                     </tr>
 
