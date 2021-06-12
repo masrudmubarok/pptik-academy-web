@@ -34,6 +34,12 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="order_id" class="col-2 col-form-label">ID Order*</label>
+                <div class="col-3">
+                    <input type="text" class="form-control" name="order_id" value="<?= $beli->order_id ?>" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="nama_siswa" class="col-2 col-form-label">Siswa*</label>
                 <div class="col-3">
                     <input type="text" class="form-control" name="nama_siswa" value="<?= $beli->id_siswa ?>" readonly>
@@ -46,19 +52,26 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="tanggal_ambilkursus" class="col-2 col-form-label">Tanggal Pembelian*</label>
+                <label for="gross_amount" class="col-2 col-form-label">Jumlah*</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="tanggal_ambilkursus" value="<?= $beli->tanggal_ambilkursus ?>">
+                    <input type="text" class="form-control" name="gross_amount" value="<?= $beli->gross_amount ?>">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="status_kursus" class="col-2 col-form-label">Status Kursus*</label>
+                <label for="transaction_time" class="col-2 col-form-label">Waktu*</label>
                 <div class="col-3">
-                    <select name="status_kursus" class="custom-select">
-                        <option selected value="<?php echo $beli->status_kursus ?>"><b><?php echo $beli->status_kursus ?></b></option>
-                        <option>accept</option>
+                    <input type="text" class="form-control" name="transaction_time" value="<?= $beli->transaction_time ?>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="transaction_status" class="col-2 col-form-label">Status*</label>
+                <div class="col-3">
+                    <select name="transaction_status" class="custom-select">
+                        <option selected value="<?php echo $beli->transaction_status ?>"><b><?php echo $beli->transaction_status ?></b></option>
+                        <option>settlement</option>
                         <option>pending</option>
-                        <option>denied</option>
+                        <option>cancel</option>
+                        <option>failure</option>
                     </select>
                 </div>
             </div>

@@ -55,7 +55,6 @@
                                     <td class="text-center"><?php echo $beli->transaction_time; ?></td>
                                     <td class="text-center"><?php echo $beli->transaction_status; ?></td>
                                     <td class="text-center" style="width: 80px">
-                                        <a href="<?= base_url('Pembelian/lihat_detail/' . $beli->id_ambilkursus) ?>"><i class="fa fa-eye text-secondary"></i></a>
                                         <a href="<?= base_url('Pembelian/edit_pembelian/' . $beli->id_ambilkursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $beli->id_ambilkursus; ?>" data-title="<?php echo $beli->id_ambilkursus; ?>"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
