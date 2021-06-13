@@ -42,7 +42,7 @@
                                 <th class="text-center" style="width: 20px">NO</th>
                                 <th class="text-center" style="width: 150px">NAMA SISWA</th>
                                 <th class="text-center" style="width: 150px">KURSUS</th>
-                                <th class="text-center" style="width: 150px">TANGGAL AMBIl KURSUS</th>
+                                <th class="text-center" style="width: 150px">START TIME</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,7 +54,7 @@
                                     <td class="text-center" style="width: 20px"><?php echo $no++ ?></td>
                                     <td class="text-left"><?php echo $swa->nama_siswa; ?></td>
                                     <td class="text-left" style="width: 250px"><?php echo $swa->nama_kursus; ?></td>
-                                    <td class="text-center"><?php echo $swa->tanggal_ambilkursus; ?></td>
+                                    <td class="text-center"><?php echo $swa->transaction_time; ?></td>
                                 </tr>
                             <?php $i++;
                             } ?>
