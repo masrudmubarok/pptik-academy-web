@@ -1,7 +1,7 @@
 <?php
   include "koneksi.php";
 
- $id_kursus = $_POST['id_kursus'] ;
+ $id_kursus = $_post['id_siswa'] ;
 
   $query = "SELECT * FROM siswa, ambil_kursus, kursus WHERE siswa.id_siswa = ambil_kursus.id_siswa AND ambil_kursus.id_kursus = kursus.id_kursus AND kursus.id_kursus='$id_kursus' ";
 

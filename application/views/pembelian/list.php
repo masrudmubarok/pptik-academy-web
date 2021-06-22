@@ -38,7 +38,6 @@
                                 <th class="text-center" style="width: 80px">JUMLAH</th>
                                 <th class="text-center" style="width: 80px">WAKTU</th>
                                 <th class="text-center" style="width: 80px">STATUS</th>
-                                <th class="text-center" style="width: 80px">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,10 +53,6 @@
                                     <td class="text-center"><?php echo $beli->gross_amount; ?></td>
                                     <td class="text-center"><?php echo $beli->transaction_time; ?></td>
                                     <td class="text-center"><?php echo $beli->transaction_status; ?></td>
-                                    <td class="text-center" style="width: 80px">
-                                        <a href="<?= base_url('Pembelian/edit_pembelian/' . $beli->id_ambilkursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
-                                        <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $beli->id_ambilkursus; ?>" data-title="<?php echo $beli->id_ambilkursus; ?>"><i class="fa fa-trash text-danger"></i></a>
-                                    </td>
                                 </tr>
                             <?php $i++;
                             } ?>
@@ -68,30 +63,3 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="ModalDelete" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Konfirmasi Penghapusan</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
-            </div>
-            <div class="modal-body">
-                <p>Anda yakin ingin menghapus data pembelian kursus yang dipilih?</p>
-                <p id="pembeliantitle"></p>
-            </div>
-            <div class="modal-footer">
-                <a href="<?php echo base_url() ?>Pembelian/delete/<?php echo $beli->id_ambilkursus ?>" class="btn btn-danger">Delete</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    $('#ModalDelete').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget)
-        var pembelian_id = button.data('id')
-        var modal = $(this)
-        var pembelian_title = button.data('title');
-        document.getElementById('pembeliantitle').innerHTML = pembelian_title;
-        modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Pembelian/delete/" + pembelian_id)
-    })
-</script>

@@ -59,22 +59,4 @@ class Pembelian_model extends CI_Model
     {
         return $this->db->where('id_kursus', $id_kursus)->get('kursus')->row();
     }
-
-    public function update($id_ambilkursus, $data1)
-    {
-        $this->db->where('id_ambilkursus', $id_ambilkursus)->update('ambil_kursus', $data1);
-        return $this->db->affected_rows();
-    }
-
-    public function updateTransaksi($order_id, $data1)
-    {
-        $this->db->where('order_id', $order_id)->update('ambil_kursus', $data1);
-        return $this->db->affected_rows();
-    }
-
-    public function delete($id_ambilkursus)
-    {
-        $this->db->where('id_ambilkursus', $id_ambilkursus)->delete('ambil_kursus');
-        return $this->db->affected_rows();
-    }
 }
