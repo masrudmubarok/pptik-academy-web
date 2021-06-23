@@ -13,7 +13,7 @@ class Pembelian extends CI_Controller
     public function index()
     {
         $param['main_content'] = 'pembelian/list';
-        $param['page_title'] = 'Purchase';
+        $param['page_title'] = 'Pembelian Kursus';
         $param['pembelian_list'] = $this->Pembelian_model->getAllPembelian();
         $this->load->view('template', $param);
     }

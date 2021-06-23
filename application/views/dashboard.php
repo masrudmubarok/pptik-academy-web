@@ -9,13 +9,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Courses</b></h4>
-                    <h6><?php echo $sum_kursus ?> Class</h6>
+                    <h4 class="mt-4 mr-2"><b>Kursus</b></h4>
+                    <h6><?php echo $sum_kursus ?> Kelas</h6>
                 </div>
                 <div class="icon">
                     <i class="fa fa-book ml-2"></i>
                 </div>
-                <a href="<?= base_url('Kursus'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('Kursus'); ?>" class="small-box-footer">Info lengkap <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -24,13 +24,13 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Tutors</b></h4>
-                    <h6><?php echo $sum_tutor ?> People</h6>
+                    <h4 class="mt-4 mr-2"><b>Tutor</b></h4>
+                    <h6><?php echo $sum_tutor ?> Orang</h6>
                 </div>
                 <div class="icon">
                     <i class="fa fa-user ml-2"></i>
                 </div>
-                <a href="<?= base_url('Tutor'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('Tutor'); ?>" class="small-box-footer">Info lengkap <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
 
@@ -39,20 +39,20 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h4 class="mt-4 mr-2"><b>Students</b></h4>
-                    <h6><?php echo $sum_siswa ?> People</h6>
+                    <h4 class="mt-4 mr-2"><b>Siswa</b></h4>
+                    <h6><?php echo $sum_siswa ?> Orang</h6>
                 </div>
                 <div class="icon">
                     <i class="fa fa-users ml-2"></i>
                 </div>
-                <a href="<?= base_url('Siswa'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('Siswa'); ?>" class="small-box-footer">Info lengkap <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>
 
     <br>
     <center>
-        <h2>Top Courses</h2>
+        <h2>Top Kursus</h2>
     </center>
     <div class="py-4">
         <div class="container">
@@ -68,7 +68,7 @@
                                     <tr>
                                         <td class="text-center"><?php echo $no++; ?></td>
                                         <td class="text-left"><?php echo $tpk->nama_kursus ?></td>
-                                        <td class="text-center"><?php echo $tpk->jumlah ?> <sub style="color: #778899;">intakes</sub></td>
+                                        <td class="text-center"><?php echo $tpk->jumlah ?> <sub style="color: #778899;">pengambilan</sub></td>
                                     </tr>
                                 <?php $i++;
                                 } ?>

@@ -9,7 +9,6 @@ class Tutor_model extends CI_Model
 
   public function getAllTtr()
   {
-    // return $this->db->get('tutor')->result();
     $this->db->select('*');
     $this->db->from('tutor');
     $query = $this->db->get();

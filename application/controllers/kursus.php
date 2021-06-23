@@ -13,7 +13,7 @@ class Kursus extends CI_Controller
 	public function index()
 	{
 		$param['main_content'] = 'kursus/list';
-		$param['page_title'] = 'Courses';
+		$param['page_title'] = 'Kursus';
 		$param['krs_list'] = $this->Kursus_model->getAllKrs();
 		$this->load->view('template', $param);
 	}
@@ -22,7 +22,7 @@ class Kursus extends CI_Controller
 	{
 		$id_kursus = $this->uri->segment(3);
 		$data['main_content'] = 'kursus/list_detail';
-		$data['page_title'] = 'Detail Courses';
+		$data['page_title'] = 'Detail Kursus';
 		$data['krs_list'] = $this->Kursus_model->getKrs($id_kursus);
 		$this->load->view('template', $data);
 	}
@@ -560,7 +560,6 @@ class Kursus extends CI_Controller
 			if ($reset == "on") {
 				$this->Kursus_model->reset($id_kursus);
 			}
-
 			$this->session->set_flashdata('success_message', 'Data kursus berhasil diubah');
 			redirect('Kursus');
 		}

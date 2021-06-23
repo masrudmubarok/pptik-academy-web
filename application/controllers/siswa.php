@@ -13,7 +13,7 @@ class Siswa extends CI_Controller
 	public function index()
 	{
 		$param['main_content'] = 'siswa/list';
-		$param['page_title'] = 'Students';
+		$param['page_title'] = 'Siswa';
 		$param['swa_list'] = $this->Siswa_model->getswas();
 		$this->load->view('template', $param);
 	}

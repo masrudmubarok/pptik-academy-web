@@ -47,13 +47,13 @@
 			<div class="list-group list-group-flush">
 				<a class="list-group-item bg-transparent"></a>
 				<a href="<?= base_url(); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-dashboard"></span> &nbsp;Dashboard</a>
-				<a href="<?= base_url('Kursus'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-book"></span> &nbsp;Courses</a>
-				<a href="<?= base_url('Pembelian'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-shopping-basket"></span> &nbsp;Purchase</a>
+				<a href="<?= base_url('Kursus'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-book"></span> &nbsp;Kursus</a>
+				<a href="<?= base_url('Pembelian'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-shopping-basket"></span> &nbsp;Pembelian Kursus</a>
 				<a href="<?= base_url('Tutor'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-user"></span> &nbsp;&nbsp;Tutor</a>
-				<a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-users"></span> &nbsp;Students</a>
-				<a href="<?= base_url('Ujian'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-file"></span> &nbsp;&nbsp;Exam</a>
+				<a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-users"></span> &nbsp;Siswa</a>
+				<a href="<?= base_url('Ujian'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-file"></span> &nbsp;&nbsp;Ujian</a>
 				<!-- <a href="<?= base_url('Siswa'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-shopping-cart"></span> &nbsp;Purchase</a> -->
-				<a href="<?= base_url('Berita'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-edit"></span> &nbsp;News</a>
+				<a href="<?= base_url('Berita'); ?>" class="list-group-item list-group-item-action bg-dark sdf"><span class="fa fa-edit"></span> &nbsp;Berita</a>
 			</div>
 		</nav>
 		<!-- /#sidebar-wrapper -->

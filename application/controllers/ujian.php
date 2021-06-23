@@ -13,7 +13,7 @@ class Ujian extends CI_Controller
     public function index()
     {
         $param['main_content'] = 'ujian/list';
-        $param['page_title'] = 'Exam';
+        $param['page_title'] = 'Ujian';
         $param['ujian_list'] = $this->Ujian_model->getAllUjian();
         $this->load->view('template', $param);
     }
