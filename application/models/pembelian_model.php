@@ -1,5 +1,5 @@
 <?php
-class Pembelian_model extends CI_Model
+class pembelian_model extends CI_Model
 {
     public function __construct()
     {

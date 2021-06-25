@@ -1,5 +1,5 @@
 <?php
-class Kursus_model extends CI_Model
+class kursus_model extends CI_Model
 {
   public function __construct()
   {
@@ -45,11 +45,11 @@ class Kursus_model extends CI_Model
     return $this->db->affected_rows();
   }
 
-public function update($id_kursus, $data)
-{
-  $this->db->where('id_kursus', $id_kursus)->update('kursus', $data);
-  return $this->db->affected_rows();
-}
+  public function update($id_kursus, $data)
+  {
+    $this->db->where('id_kursus', $id_kursus)->update('kursus', $data);
+    return $this->db->affected_rows();
+  }
 
   public function delete($id_kursus)
   {

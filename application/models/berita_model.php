@@ -1,5 +1,6 @@
 <?php
-class Berita_model extends CI_Model
+
+class berita_model extends CI_Model
 {
     public function __construct()
     {
@@ -19,12 +20,6 @@ class Berita_model extends CI_Model
     public function getBerita($id_berita)
     {
         return $this->db->where('id_berita', $id_berita)->get('berita')->row();
-    }
-
-    public function insert($data)
-    {
-        $this->db->insert('berita', $data);
-        return $this->db->affected_rows();
     }
 
     public function update($id_berita, $data)

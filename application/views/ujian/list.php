@@ -55,7 +55,7 @@
                                     <td class="text-center"><?php echo $ujian->status_sertifikat; ?></td>
                                     <td class="text-center"><?php echo $ujian->no_sertifikat; ?></td>
                                     <td class="text-center" style="width: 80px">
-                                        <a href="<?= base_url('Ujian/edit_ujian/' . $ujian->id_ujian) ?>"><i class="fa fa-pencil text-secondary"></i></a>
+                                        <a href="<?= base_url('ujian/edit_ujian/' . $ujian->id_ujian) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $ujian->id_ujian; ?>" data-title="<?php echo $ujian->id_ujian; ?>"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
@@ -79,7 +79,7 @@
                 <p id="ujiantitle"></p>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo base_url() ?>Ujian/delete/<?php echo $ujian->id_ujian ?>" class="btn btn-danger">Delete</a>
+                <a href="<?php echo base_url() ?>ujian/delete/<?php echo $ujian->id_ujian ?>" class="btn btn-danger">Delete</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -92,6 +92,6 @@
         var modal = $(this)
         var ujian_title = button.data('title');
         document.getElementById('ujiantitle').innerHTML = ujian_title;
-        modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Ujian/delete/" + ujian_id)
+        modal.find('.modal-footer a').attr("href", "<?= base_url() ?>ujian/delete/" + ujian_id)
     })
 </script>

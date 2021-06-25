@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kursus extends CI_Controller
+class kursus extends CI_Controller
 {
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Kursus_model');
+		$this->load->model('kursus_model');
 	}
 
 	public function index()
 	{
 		$param['main_content'] = 'kursus/list';
 		$param['page_title'] = 'Kursus';
-		$param['krs_list'] = $this->Kursus_model->getAllKrs();
+		$param['krs_list'] = $this->kursus_model->getAllKrs();
 		$this->load->view('template', $param);
 	}
 
@@ -23,7 +23,7 @@ class Kursus extends CI_Controller
 		$id_kursus = $this->uri->segment(3);
 		$data['main_content'] = 'kursus/list_detail';
 		$data['page_title'] = 'Detail Kursus';
-		$data['krs_list'] = $this->Kursus_model->getKrs($id_kursus);
+		$data['krs_list'] = $this->kursus_model->getKrs($id_kursus);
 		$this->load->view('template', $data);
 	}
 
@@ -31,7 +31,7 @@ class Kursus extends CI_Controller
 	{
 		$param['main_content'] = 'kursus/add';
 		$param['page_title'] = 'Tambah Kursus';
-		$param['ttrs_list'] = $this->Kursus_model->getAllTtrs();
+		$param['ttrs_list'] = $this->kursus_model->getAllTtrs();
 		$this->load->view('template', $param);
 	}
 
@@ -77,7 +77,7 @@ class Kursus extends CI_Controller
 
 		if (empty($nama_kursus) || empty($deskripsi) || empty($harga) || empty($jumlah_video) || empty($jumlah_modul)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Kursus/add_krs');
+			redirect('kursus/add_krs');
 		} else {
 			if ($icon = '') {
 			} else {
@@ -435,13 +435,13 @@ class Kursus extends CI_Controller
 
 			];
 
-			$cek = $this->Kursus_model->insert($data);
+			$cek = $this->kursus_model->insert($data);
 			if ($cek) {
 				$this->session->set_flashdata('success_message', 'Data kursus berhasil ditambahkan');
-				redirect('Kursus');
+				redirect('kursus');
 			} else {
 				$this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
-				redirect('Kursus/add_krs');
+				redirect('kursus/add_krs');
 			}
 		}
 	}
@@ -450,8 +450,8 @@ class Kursus extends CI_Controller
 	{
 		$data['main_content'] = 'kursus/edit';
 		$data['page_title'] = 'Edit Data Kursus';
-		$data['krs'] = $this->Kursus_model->getKkrs($id_kursus);
-		$data['ttr_list'] = $this->Kursus_model->getAllTtrs();
+		$data['krs'] = $this->kursus_model->getKkrs($id_kursus);
+		$data['ttr_list'] = $this->kursus_model->getAllTtrs();
 		$this->load->view('template', $data);
 	}
 
@@ -499,7 +499,7 @@ class Kursus extends CI_Controller
 
 		if (empty($nama_kursus) || empty($deskripsi) || empty($harga) || empty($jumlah_video) || empty($jumlah_modul)) {
 			$this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-			redirect('Kursus/edit_krs/' . $id_kursus);
+			redirect('kursus/edit_krs/' . $id_kursus);
 		} else {
 			if ($icon = '' && $video1 = '' && $modul1 = '' && $video2 = '' && $modul2 = '' && $video3 = '' && $modul3 = '' && $video4 = '' && $modul4 = '' && $video5 = '' && $modul5 = '' && $video6 = '' && $modul6 = '' && $video7 = '' && $modul7 = '' && $video8 = '' && $modul8 = '' && $video9 = '' && $modul9 = '' && $video10 = '' && $modul10 = '') {
 			} else {
@@ -556,19 +556,19 @@ class Kursus extends CI_Controller
 				'video10' => $video10,
 				'modul10' => $modul10,
 			];
-			$this->Kursus_model->update($id_kursus, $data);
+			$this->kursus_model->update($id_kursus, $data);
 			if ($reset == "on") {
-				$this->Kursus_model->reset($id_kursus);
+				$this->kursus_model->reset($id_kursus);
 			}
 			$this->session->set_flashdata('success_message', 'Data kursus berhasil diubah');
-			redirect('Kursus');
+			redirect('kursus');
 		}
 	}
 
 	public function delete($id_kursus)
 	{
-		$this->Kursus_model->delete($id_kursus);
+		$this->kursus_model->delete($id_kursus);
 		$this->session->set_flashdata('success_message', 'Data kursus berhasil dihapus');
-		redirect('Kursus');
+		redirect('kursus');
 	}
 }

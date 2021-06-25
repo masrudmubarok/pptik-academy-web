@@ -26,7 +26,7 @@
 <div class="py-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Berita/add_berita'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah</a></div>
+            <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('berita/add_berita'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Berita</a></div>
         </div>
     </div>
 </div>
@@ -58,7 +58,7 @@
                                     <td class="text-center"><?php echo $berita->tanggal_berita ?></td>
                                     <td class="text-center"><?php echo $berita->link_berita ?></td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('Berita/edit_berita/' . $berita->id_berita) ?>"><i class="fa fa-pencil text-secondary"></i></a>
+                                        <a href="<?= base_url('berita/edit_berita/' . $berita->id_berita) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $berita->id_berita; ?>" data-title="<?php echo $berita->id_berita; ?>"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
@@ -82,7 +82,7 @@
                 <p id="krstitle"></p>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo base_url() ?>Berita/delete/<?php echo $berita->id_berita ?>" class="btn btn-danger">Delete</a>
+                <a href="<?php echo base_url() ?>berita/delete/<?php echo $berita->id_berita ?>" class="btn btn-danger">Delete</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

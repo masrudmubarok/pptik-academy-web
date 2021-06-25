@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tutor extends CI_Controller
+class tutor extends CI_Controller
 {
 
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Tutor_model');
+        $this->load->model('tutor_model');
     }
 
     public function index()
     {
         $param['main_content'] = 'tutor/list';
-        $param['page_title'] = 'Tutors';
-        $param['ttr_list'] = $this->Tutor_model->getAllTtr();
+        $param['page_title'] = 'Tutor';
+        $param['ttr_list'] = $this->tutor_model->getAllTtr();
         $this->load->view('template', $param);
     }
 
@@ -31,54 +31,54 @@ class Tutor extends CI_Controller
         $keahlian = $this->input->post('keahlian');
         if (empty($nama_tutor) || empty($keahlian)) {
             $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-            redirect('Tutor/add_ttr');
+            redirect('tutor/add_ttr');
         } else {
             $data = [
                 'nama_tutor' => $nama_tutor,
                 'keahlian' => $keahlian,
             ];
-            $cek = $this->Tutor_model->insert($data);
+            $cek = $this->tutor_model->insert($data);
             if ($cek) {
                 $this->session->set_flashdata('success_message', 'Data tutor berhasil ditambahkan');
-                redirect('Tutor');
+                redirect('tutor');
             } else {
                 $this->session->set_flashdata('error_message', 'Terjadi kesalahan dalam menambahkan data!');
-                redirect('Tutor/add_ttr');
+                redirect('tutor/add_ttr');
             }
         }
     }
 
-public function edit_ttr($id_tutor)
-{
-    $data['main_content'] = 'tutor/edit';
-    $data['page_title'] = 'Edit Data Tutor';
-    $data['ttr'] = $this->Tutor_model->getTtr($id_tutor);
-    $this->load->view('template', $data);
-}
-
-public function update()
-{
-    $id_tutor = $this->input->post('id_tutor');
-    $nama_tutor = $this->input->post('nama_tutor');
-    $keahlian = $this->input->post('keahlian');
-    if (empty($nama_tutor) || empty($keahlian)) {
-        $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-        redirect('Tutor/edit_ttr/' . $id_tutor);
-    } else {
-        $data = [
-            'nama_tutor' => $nama_tutor,
-            'keahlian' => $keahlian,
-        ];
-        $this->Tutor_model->update($id_tutor, $data);
-        $this->session->set_flashdata('success_message', 'Data tutor berhasil diubah');
-        redirect('Tutor');
+    public function edit_ttr($id_tutor)
+    {
+        $data['main_content'] = 'tutor/edit';
+        $data['page_title'] = 'Edit Data Tutor';
+        $data['ttr'] = $this->tutor_model->getTtr($id_tutor);
+        $this->load->view('template', $data);
     }
-}
+
+    public function update()
+    {
+        $id_tutor = $this->input->post('id_tutor');
+        $nama_tutor = $this->input->post('nama_tutor');
+        $keahlian = $this->input->post('keahlian');
+        if (empty($nama_tutor) || empty($keahlian)) {
+            $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
+            redirect('tutor/edit_ttr/' . $id_tutor);
+        } else {
+            $data = [
+                'nama_tutor' => $nama_tutor,
+                'keahlian' => $keahlian,
+            ];
+            $this->tutor_model->update($id_tutor, $data);
+            $this->session->set_flashdata('success_message', 'Data tutor berhasil diubah');
+            redirect('tutor');
+        }
+    }
 
     public function delete($id_tutor)
     {
-        $this->Tutor_model->delete($id_tutor);
+        $this->tutor_model->delete($id_tutor);
         $this->session->set_flashdata('success_message', 'Data tutor berhasil dihapus');
-        redirect('Tutor');
+        redirect('tutor');
     }
 }

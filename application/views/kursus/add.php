@@ -28,7 +28,7 @@
    <div class="container">
      <div class="row">
        <div class="col-md-7">
-         <form id="c_form-h" method="post" action="<?= base_url('Kursus/create'); ?>" enctype="multipart/form-data">
+         <form id="c_form-h" method="post" action="<?= base_url('kursus/create'); ?>" enctype="multipart/form-data">
            <div class="form-group row">
              <label for="nama_kursus" class="col-4 col-form-label">Nama Kursus*</label>
              <div class="col-9">

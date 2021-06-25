@@ -1,5 +1,5 @@
 <?php
-class Siswa_model extends CI_Model
+class siswa_model extends CI_Model
 {
   public function __construct()
   {
@@ -65,17 +65,17 @@ class Siswa_model extends CI_Model
     return $this->db->where('id_ambilkursus', $id_ambilkursus)->get('ambil_kursus')->row();
   }
 
-  public function insert1($data1)
-  {
-    $this->db->insert('siswa', $data1);
-    return $this->db->affected_rows();
-  }
+  // public function insert1($data1)
+  // {
+  //   $this->db->insert('siswa', $data1);
+  //   return $this->db->affected_rows();
+  // }
 
-  public function insert2($data2)
-  {
-    $this->db->insert('ambil_kursus', $data2);
-    return $this->db->affected_rows();
-  }
+  // public function insert2($data2)
+  // {
+  //   $this->db->insert('ambil_kursus', $data2);
+  //   return $this->db->affected_rows();
+  // }
 
   public function update1($id_siswa, $data1)
   {

@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ujian extends CI_Controller
+class ujian extends CI_Controller
 {
 
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Ujian_model');
+        $this->load->model('ujian_model');
     }
 
     public function index()
     {
         $param['main_content'] = 'ujian/list';
         $param['page_title'] = 'Ujian';
-        $param['ujian_list'] = $this->Ujian_model->getAllUjian();
+        $param['ujian_list'] = $this->ujian_model->getAllUjian();
         $this->load->view('template', $param);
     }
 
@@ -22,7 +22,7 @@ class Ujian extends CI_Controller
     {
         $data['main_content'] = 'ujian/edit';
         $data['page_title'] = 'Edit Data Ujian';
-        $data['ujian'] = $this->Ujian_model->getUjianId($id_ujian);
+        $data['ujian'] = $this->ujian_model->getUjianId($id_ujian);
         $this->load->view('template', $data);
     }
 
@@ -35,7 +35,7 @@ class Ujian extends CI_Controller
         $no_sertifikat = $this->input->post('no_sertifikat');
         if (empty($no_sertifikat)) {
             $this->session->set_flashdata('error_message', 'Harap masukkan data dengan benar!');
-            redirect('Ujian/edit_ujian/' . $id_ujian);
+            redirect('ujian/edit_ujian/' . $id_ujian);
         } else {
             $data = [
                 'id_ujian' => $id_ujian,
@@ -44,20 +44,20 @@ class Ujian extends CI_Controller
                 'status_sertifikat' => $status_sertifikat,
                 'no_sertifikat' => $no_sertifikat,
             ];
-            $this->Ujian_model->update($id_ujian, $data);
+            $this->ujian_model->update($id_ujian, $data);
             // if ($reset == "on") {
             // 	$this->Siswa_model->reset($id_siswa);
             // }
 
             $this->session->set_flashdata('success_message', 'Data ujian berhasil diubah');
-            redirect('Ujian');
+            redirect('ujian');
         }
     }
 
     public function delete($id_ujian)
     {
-        $this->Ujian_model->delete($id_ujian);
+        $this->ujian_model->delete($id_ujian);
         $this->session->set_flashdata('success_message', 'Data pengambilan ujian siswa berhasil dihapus');
-        redirect('Ujian');
+        redirect('ujian');
     }
 }

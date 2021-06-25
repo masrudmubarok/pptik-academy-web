@@ -26,7 +26,7 @@
 <div class="py-0">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Tutor/add_ttr'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Tutor</a></div>
+      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('tutor/add_ttr'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Tutor</a></div>
     </div>
   </div>
 </div>
@@ -54,7 +54,7 @@
                   <td class="text-left"><?php echo $ttr->nama_tutor ?></td>
                   <td class="text-center"><?php echo $ttr->keahlian ?></td>
                   <td class="text-center">
-                    <a href="<?= base_url('Tutor/edit_ttr/' . $ttr->id_tutor) ?>"><i class="fa fa-pencil text-secondary"></i></a>
+                    <a href="<?= base_url('tutor/edit_ttr/' . $ttr->id_tutor) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                     <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $ttr->id_tutor; ?>" data-title="<?php echo $ttr->id_tutor; ?>"><i class="fa fa-trash text-danger"></i></a>
                   </td>
                 </tr>
@@ -78,7 +78,7 @@
         <p id="krstitle"></p>
       </div>
       <div class="modal-footer">
-        <a href="<?php echo base_url() ?>Tutor/delete/<?php echo $ttr->id_tutor ?>" class="btn btn-danger">Delete</a>
+        <a href="<?php echo base_url() ?>tutor/delete/<?php echo $ttr->id_tutor ?>" class="btn btn-danger">Delete</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -91,6 +91,6 @@
     var modal = $(this)
     var ttr_title = button.data('title');
     document.getElementById('ttrtitle').innerHTML = ttr_title;
-    modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Tutor/delete/" + ttr_id)
+    modal.find('.modal-footer a').attr("href", "<?= base_url() ?>tutor/delete/" + ttr_id)
   })
 </script>

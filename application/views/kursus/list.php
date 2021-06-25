@@ -26,7 +26,7 @@
 <div class="py-0">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('Kursus/add_krs'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Kursus</a></div>
+      <div class="col-md-12 mt-2"><a class="btn btn-success" href="<?php echo base_url('kursus/add_krs'); ?>"><i class="fa fa-plus"></i>&ensp;Tambah Kursus</a></div>
     </div>
   </div>
 </div>
@@ -56,8 +56,8 @@
                   <td class="text-left"><?php echo $krs->nama_tutor ?></td>
                   <td class="text-center">Rp <?php echo number_format($krs->harga, 0, ',', '.'); ?></td>
                   <td class="text-center">
-                    <a href="<?= base_url('Kursus/detail/' . $krs->id_kursus) ?>"><i class="fa fa-eye text-secondary"></i></a>
-                    <a href="<?= base_url('Kursus/edit_krs/' . $krs->id_kursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
+                    <a href="<?= base_url('kursus/detail/' . $krs->id_kursus) ?>"><i class="fa fa-eye text-secondary"></i></a>
+                    <a href="<?= base_url('kursus/edit_krs/' . $krs->id_kursus) ?>"><i class="fa fa-pencil text-secondary"></i></a>
                     <a href="#" data-toggle="modal" data-target="#ModalDelete" data-id="<?php echo $krs->id_kursus; ?>" data-title="<?php echo $krs->id_kursus; ?>"><i class="fa fa-trash text-danger"></i></a>
                   </td>
                 </tr>
@@ -81,7 +81,7 @@
         <p id="krstitle"></p>
       </div>
       <div class="modal-footer">
-        <a href="<?php echo base_url() ?>Kursus/delete/<?php echo $krs->id_kursus ?>" class="btn btn-danger">Delete</a>
+        <a href="<?php echo base_url() ?>kursus/delete/<?php echo $krs->id_kursus ?>" class="btn btn-danger">Delete</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -94,6 +94,6 @@
     var modal = $(this)
     var krs_title = button.data('title');
     document.getElementById('krstitle').innerHTML = krs_title;
-    modal.find('.modal-footer a').attr("href", "<?= base_url() ?>Kursus/delete/" + krs_id)
+    modal.find('.modal-footer a').attr("href", "<?= base_url() ?>kursus/delete/" + krs_id)
   })
 </script>

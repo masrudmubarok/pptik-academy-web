@@ -26,7 +26,7 @@
 </div>
 <div class="py-4">
   <div class="container">
-    <form id="c_form-h" method="post" action="<?= base_url('Kursus/update'); ?>" enctype="multipart/form-data">
+    <form id="c_form-h" method="post" action="<?= base_url('kursus/update'); ?>" enctype="multipart/form-data">
       <div class="form-group row">
         <div class="col-3">
           <input type="hidden" class="form-control" name="id_kursus" value="<?= $krs->id_kursus ?>" readonly>
