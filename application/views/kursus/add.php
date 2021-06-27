@@ -97,6 +97,12 @@
              </div>
            </div>
            <div class="form-group row">
+             <label for="moduloverview1" class="col-4 col-form-label">Modul Overview 1*</label>
+             <div class="col-9">
+               <input type="file" name="moduloverview1">
+             </div>
+           </div>
+           <div class="form-group row">
              <label for="judul2" class="col-4 col-form-label">Judul 2*</label>
              <div class="col-9">
                <input type="text" class="form-control" name="judul2">
@@ -112,6 +118,12 @@
              <label for="modul2" class="col-4 col-form-label">Modul 2*</label>
              <div class="col-9">
                <input type="file" name="modul2">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label for="moduloverview2" class="col-4 col-form-label">Modul Overview 2*</label>
+             <div class="col-9">
+               <input type="file" name="moduloverview2">
              </div>
            </div>
            <div class="form-group row">
