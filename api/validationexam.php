@@ -4,7 +4,7 @@
   $id_kursus = $_POST['id_kursus'];
 //   $id_siswa = 4;
 //   $id_kursus = 1;
-  $query = "select * from ambil_kursus where id_siswa='$id_siswa' and id_kursus='$id_kursus' ";
+  $query = "select * from ujian where id_siswa='$id_siswa' and id_kursus='$id_kursus' ";
   $hasil = mysqli_query($con, $query);
   if (mysqli_num_rows($hasil) > 0) {
     $response = array();

@@ -8,8 +8,6 @@ $email = $_POST['email'];
 $kota = $_POST['kota'];
 $negara = $_POST['negara'];
 
-$password = password_hash($password, PASSWORD_DEFAULT);
-
 $Sql_Query = "insert into siswa (nama_siswa,username,password,email,kota, negara) values ('$nama_siswa','$username','$password','$email','$kota','$negara')";
  
  if(mysqli_query($con,$Sql_Query)){
